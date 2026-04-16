@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "ortopediche",
+    "label": "Calzature Ortopediche",
+    "description": "Supporto anatomico e sollievo dal dolore per chi cerca comfort terapeutico quotidiano."
+  },
+  {
+    "slug": "posturali",
+    "label": "Calzature Posturali",
+    "description": "Correzione della postura e allineamento naturale del corpo ad ogni passo."
+  },
+  {
+    "slug": "fitness",
+    "label": "Calzature Fitness",
+    "description": "Performance, energia e protezione per ogni tipo di allenamento."
+  },
+  {
+    "slug": "trekking",
+    "label": "Calzature Trekking",
+    "description": "Resistenza, grip e impermeabilita' per sentieri e avventure outdoor."
+  }
+]

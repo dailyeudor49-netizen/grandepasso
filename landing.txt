@@ -1,0 +1,508 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+  .lp *{margin:0;padding:0;box-sizing:border-box}
+  .lp{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.55}
+  .lp img{max-width:100%;height:auto;display:block}
+  .lp a{text-decoration:none;color:inherit}
+  .lp-inner{max-width:1000px;margin:0 auto;padding:0 16px}
+
+  .lp-bar{background:#112a2d;color:#fff;text-align:center;padding:10px 16px;font-size:12px;font-weight:600;letter-spacing:.5px}
+  .lp-bar em{font-style:normal;color:#e8871e}
+
+ .lp-cta{display:inline-block;width:100%;max-width:440px;background:linear-gradient(to bottom,#f0a030,#d48806);color:#fff!important;font-family:'Poppins',sans-serif;font-size:15px;font-weight:800;padding:17px 24px;border:none;border-radius:60px;cursor:pointer;text-align:center;text-transform:uppercase;letter-spacing:.8px;box-shadow:0 4px 20px rgba(180,120,0,0.35);transition:transform .15s,box-shadow .15s}
+.lp-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(180,120,0,0.45)}
+  .lp-cta-note{text-align:center;font-size:12px;color:#888;margin-top:10px}
+  .lp-cta-note b{color:#1a7a6d}
+
+  .lp-sec{padding:44px 16px}
+  .lp-sec-light{background:#eef3f8}
+  .lp-sec-dark{background:#112a2d;color:#fff}
+  .lp-sec h2{font-family:'Poppins',sans-serif;font-size:24px;font-weight:800;text-align:center;margin-bottom:10px;line-height:1.25}
+  .lp-sec h2 em{font-style:normal;color:#1a7a6d}
+  .lp-sec .sub{text-align:center;font-size:14px;color:#777;max-width:540px;margin:0 auto 28px}
+  .lp-sec-dark .sub{color:#8aaba7}
+  .lp-sec-dark h2{color:#fff}
+  .lp-sec-dark h2 em{color:#e8871e}
+
+  .lp-fasi{padding:0 16px 44px}
+  .lp-fasi-head{text-align:center;padding:44px 0 32px}
+  .lp-fasi-head h2{font-family:'Poppins',sans-serif;font-size:28px;font-weight:800;line-height:1.2;margin-bottom:10px}
+  .lp-fasi-head h2 em{font-style:normal;color:#1a7a6d}
+  .lp-fasi-head p{font-size:14.5px;color:#666;max-width:480px;margin:0 auto}
+  .lp-fasi-grid{display:grid;grid-template-columns:1fr;gap:20px;max-width:960px;margin:0 auto}
+  .lp-fase{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:1/1}
+  .lp-fase img{width:100%;height:100%;object-fit:cover;display:block}
+  .lp-fase-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(17,42,45,.88) 0%,rgba(17,42,45,.1) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+  .lp-fase-tag{display:inline-block;width:fit-content;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 12px;border-radius:20px;margin-bottom:8px;color:#fff}
+  .lp-fase:nth-child(1) .lp-fase-tag{background:#e8871e}
+  .lp-fase:nth-child(2) .lp-fase-tag{background:#1a7a6d}
+  .lp-fase:nth-child(3) .lp-fase-tag{background:#2a9d8f}
+  .lp-fase h3{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:4px}
+  .lp-fase p{font-size:13.5px;color:rgba(255,255,255,.85);max-width:360px}
+
+  .lp-stats-sec{background:#112a2d;padding:40px 16px}
+  .lp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:620px;margin:0 auto;text-align:center}
+  .lp-stat-n{font-family:'Poppins',sans-serif;font-size:36px;font-weight:800;color:#e8871e;line-height:1}
+  .lp-stat-l{font-size:11.5px;color:#8aaba7;margin-top:6px;line-height:1.4}
+  .lp-stats-disc{text-align:center;font-size:10px;color:#4a6b68;margin-top:18px}
+
+  .lp-grid6{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:960px;margin:0 auto}
+  .lp-card{border-radius:16px;overflow:hidden;background:#faf8f5;border:1px solid #eee8df}
+  .lp-card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+  .lp-card-content{padding:14px 16px 18px}
+  .lp-card h4{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#1a1a1a;margin-bottom:4px}
+  .lp-card p{font-size:12px;color:#666;line-height:1.45}
+
+  /* ===== REVIEWS ===== */
+  .lp-revs{display:grid;grid-template-columns:1fr;gap:14px;max-width:960px;margin:0 auto}
+  .lp-rev{background:#fff;border:1px solid #dde8e6;border-radius:16px;padding:20px}
+  .lp-rev.hidden{display:none}
+  .lp-rev-h{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .lp-rev-av{width:38px;height:38px;border-radius:50%;background:#112a2d;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex-shrink:0}
+  .lp-rev-name{font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:700}
+  .lp-rev-meta{font-size:10.5px;color:#1a7a6d;font-weight:600}
+  .lp-rev-stars{color:#e8871e;font-size:13px}
+  .lp-rev p{font-size:13.5px;color:#444}
+
+  .lp-revs-more{display:block;margin:20px auto 0;background:none;border:2px solid #1a7a6d;color:#1a7a6d;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;padding:12px 32px;border-radius:40px;cursor:pointer;transition:background .15s,color .15s}
+  .lp-revs-more:hover{background:#1a7a6d;color:#fff}
+  .lp-revs-more.hidden{display:none}
+
+  /* ===== REVIEW FORM ===== */
+  .lp-rev-form-wrap{max-width:600px;margin:32px auto 0;background:#fff;border:1px solid #dde8e6;border-radius:16px;padding:24px;position:relative}
+  .lp-rev-form-wrap h3{font-family:'Poppins',sans-serif;font-size:17px;font-weight:800;margin-bottom:16px;text-align:center}
+  .lp-rev-field{margin-bottom:14px}
+  .lp-rev-field label{display:block;font-size:13px;font-weight:600;margin-bottom:5px;color:#333}
+  .lp-rev-field input,.lp-rev-field textarea{width:100%;font-family:'Inter',sans-serif;font-size:14px;padding:11px 14px;border:1px solid #dde8e6;border-radius:10px;outline:none;transition:border-color .15s;resize:vertical}
+  .lp-rev-field input:focus,.lp-rev-field textarea:focus{border-color:#1a7a6d}
+  .lp-rev-field textarea{min-height:80px}
+
+  .lp-star-select{display:flex;gap:4px;flex-direction:row-reverse;justify-content:flex-end}
+  .lp-star-select input{display:none}
+  .lp-star-select label{font-size:28px;color:#d4d4d4;cursor:pointer;transition:color .1s;line-height:1}
+  .lp-star-select label:hover,.lp-star-select label:hover~label,.lp-star-select input:checked~label{color:#e8871e}
+
+  .lp-rev-submit{display:block;width:100%;background:#1a7a6d;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;padding:13px;border:none;border-radius:40px;cursor:pointer;transition:background .15s}
+  .lp-rev-submit:hover{background:#15665b}
+
+  .lp-rev-success{display:none;text-align:center;padding:28px 16px}
+  .lp-rev-success .lp-rev-success-ic{font-size:36px;margin-bottom:10px}
+  .lp-rev-success p{font-size:14px;color:#555;max-width:380px;margin:0 auto}
+  .lp-rev-success p b{color:#1a7a6d}
+
+  /* ===== GUARANTEES ===== */
+  .lp-guar-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:640px;margin:0 auto}
+  .lp-guar{text-align:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 10px}
+  .lp-guar-ic{font-size:28px;margin-bottom:6px}
+  .lp-guar strong{display:block;font-family:'Poppins',sans-serif;font-size:13px;color:#fff}
+  .lp-guar small{font-size:11px;color:#8aaba7}
+
+  .lp-pasos{max-width:600px;margin:0 auto;display:grid;gap:16px}
+  .lp-paso{display:flex;gap:14px;align-items:flex-start}
+  .lp-paso-n{flex-shrink:0;width:38px;height:38px;border-radius:50%;background:#1a7a6d;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800}
+  .lp-paso h4{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700}
+  .lp-paso p{font-size:13px;color:#666}
+
+  .lp-faq{max-width:700px;margin:0 auto 10px;border:1px solid #dde8e6;border-radius:12px;overflow:hidden;background:#fff}
+  .lp-faq summary{padding:14px 18px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  .lp-faq summary::-webkit-details-marker{display:none}
+  .lp-faq summary::after{content:'+';font-size:20px;color:#aaa;font-weight:400}
+  .lp-faq[open] summary::after{content:'−'}
+  .lp-faq-b{padding:0 18px 14px;font-size:13.5px;color:#666}
+
+  .lp-final{text-align:center;padding:48px 20px 40px}
+  .lp-price-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+  .lp-price-old{font-size:16px;color:#aaa;text-decoration:line-through}
+  .lp-price-new{font-size:32px;font-weight:800;color:#1a7a6d}
+  .lp-price-badge{background:#e8871e;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px}
+  .lp-urgency{max-width:480px;margin:0 auto 22px;background:#fef8f0;border:1px solid #f5d5a8;border-radius:10px;padding:11px 16px;text-align:center;font-size:13px;font-weight:600;color:#c46a08}
+
+  .lp-sticky{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:12px 16px;box-shadow:0 -2px 18px rgba(0,0,0,.08);z-index:999;text-align:center;transition:opacity .3s,transform .3s}
+  .lp-sticky.lp-sticky-hidden{opacity:0;pointer-events:none;transform:translateY(100%)}
+  .lp-sticky .lp-cta{max-width:520px;font-size:13.5px;padding:14px 20px}
+  .lp-spacer{height:72px}
+  .lp-timeline{max-width:600px;margin:0 auto;display:grid;gap:22px}
+  .lp-tl-step{display:grid;gap:6px}
+  .lp-tl-week{font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;color:#1a7a6d;text-transform:uppercase;letter-spacing:.5px}
+  .lp-tl-bar{height:8px;background:#eee;border-radius:10px;overflow:hidden}
+  .lp-tl-fill{height:100%;background:linear-gradient(90deg,#1a7a6d,#2a9d8f);border-radius:10px;transition:width .5s}
+  .lp-tl-info strong{font-family:'Poppins',sans-serif;font-size:14.5px;font-weight:700;color:#1a1a1a;display:block;margin-bottom:2px}
+  .lp-tl-info p{font-size:13px;color:#666}
+  .lp-tl-bottom{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
+  .lp-tl-badge{background:#f0faf8;border:1px solid #c8e6e0;border-radius:30px;padding:8px 16px;font-size:13px;font-weight:600;color:#1a7a6d}
+  .lp-tl-disc{text-align:center;font-size:10.5px;color:#aaa;margin-top:14px}
+
+  .lp-disc{font-size:10px;color:#bbb;text-align:center;padding:14px 20px;line-height:1.6;max-width:600px;margin:0 auto}
+
+  @media(min-width:640px){
+    .lp-sec h2,.lp-fasi-head h2{font-size:32px}
+    .lp-grid6{grid-template-columns:repeat(3,1fr);gap:16px}
+    .lp-card h4{font-size:15px}
+    .lp-card p{font-size:13px}
+    .lp-revs{grid-template-columns:repeat(3,1fr)}
+    .lp-guar-grid{grid-template-columns:repeat(4,1fr)}
+    .lp-sec{padding:56px 20px}
+    .lp-fasi-head{padding:56px 0 36px}
+    .lp-stats-sec{padding:48px 20px}
+  }
+  @media(min-width:860px){
+    .lp-fasi-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(min-width:960px){
+    .lp-sec h2,.lp-fasi-head h2{font-size:38px}
+    .lp-fase h3{font-size:26px}
+    .lp-fase p{font-size:14.5px}
+    .lp-stat-n{font-size:42px}
+  }
+</style>
+
+<div class="lp">
+
+  <div class="lp-bar">📦 SPEDIZIONE GRATIS · PAGAMENTO ALLA CONSEGNA · <em>OFFERTA LIMITATA -50%</em></div>
+
+  <!-- 3 FASI -->
+  <section class="lp-fasi">
+    <div class="lp-fasi-head">
+      <h2>Cammini e il Tuo Corpo <em>Si Trasforma</em></h2>
+      <p>SnellaWalk™ non è una scarpa qualunque. È un sistema a suola curva che ti spinge in avanti: attivi i glutei, scarichi le articolazioni e bruci di più ad ogni passo.</p>
+    </div>
+    <div class="lp-fasi-grid">
+      <div class="lp-fase">
+        <img src="https://cdn.shopify.com/s/files/1/0977/4134/1049/files/1.png?v=1770390980" alt="Fase Attiva">
+        <div class="lp-fase-overlay">
+          <span class="lp-fase-tag">Fase 1</span>
+          <h3>Attiva</h3>
+          <p>La suola rocker spinge il piede in avanti e attiva glutei, cosce e polpacci ad ogni passo.</p>
+        </div>
+      </div>
+      <div class="lp-fase">
+        <img src="https://cdn.shopify.com/s/files/1/0977/4134/1049/files/2.png?v=1770390979" alt="Fase Solleva">
+        <div class="lp-fase-overlay">
+          <span class="lp-fase-tag">Fase 2</span>
+          <h3>Solleva</h3>
+          <p>L'estensione d'anca fa lavorare i glutei di più: si sollevano e si tonificano camminando.</p>
+        </div>
+      </div>
+      <div class="lp-fase">
+        <img src="https://cdn.shopify.com/s/files/1/0977/4134/1049/files/3.png?v=1770390980" alt="Fase Scolpisci">
+        <div class="lp-fase-overlay">
+          <span class="lp-fase-tag">Fase 3</span>
+          <h3>Scolpisci</h3>
+          <p>In 4 settimane noti glutei più tonici, gambe più sode e una postura visibilmente migliore.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="lp-stats-sec">
+    <div class="lp-inner">
+      <div class="lp-stats">
+        <div>
+          <div class="lp-stat-n">93%</div>
+          <div class="lp-stat-l">Glutei più tonici<br>in 4 settimane*</div>
+        </div>
+        <div>
+          <div class="lp-stat-n">96%</div>
+          <div class="lp-stat-l">Comfort quotidiano<br>senza dolori</div>
+        </div>
+        <div>
+          <div class="lp-stat-n">4.8</div>
+          <div class="lp-stat-l">Valutazione media<br>+2.134 recensioni</div>
+        </div>
+      </div>
+      <p class="lp-stats-disc">*Dati da sondaggi interni e recensioni verificate. I risultati individuali possono variare.</p>
+    </div>
+  </section>
+
+  <!-- 6 GRID -->
+  <section class="lp-sec">
+    <div class="lp-inner">
+      <h2>6 Tecnologie in <em>Una Sola Scarpa</em></h2>
+      <p class="sub">Ogni dettaglio della SnellaWalk™ è progettato per farti camminare meglio e sentirti meglio.</p>
+      <div class="lp-grid6">
+        <div class="lp-card">
+          <img src="https://cdn.shopify.com/s/files/1/0977/4134/1049/files/4.png?v=1770390980" alt="Suola Rocker Ortopedica">
+          <div class="lp-card-content"><h4>Suola Rocker Ortopedica</h4><p>Suola curva che ti spinge in avanti. Rullata fluida, meno stress su ginocchia e schiena.</p></div>
+        </div>
+        <div class="lp-card">
+          <img src="https://cdn.shopify.com/s/files/1/0977/4134/1049/files/5.png?v=1770390979" alt="Plantare OrtoLift">
+          <div class="lp-card-content"><h4>Plantare OrtoLift™</h4><p>Supporto mirato ad arco e tallone. Postura più allineata dal primo passo.</p></div>
+        </div>
+        <div class="lp-card">
+          <img src="https://cdn.shopify.com/s/files/1/0977/4134/1049/files/6.png?v=1770390978" alt="Cushion+ Anti-urto">
+          <div class="lp-card-content"><h4>Cushion+ Anti-urto</h4><p>Doppia ammortizzazione che assorbe gli impatti e protegge le articolazioni.</p></div>
+        </div>
+        <div class="lp-card">
+          <img src="https://cdn.shopify.com/s/files/1/0977/4134/1049/files/7.png?v=1770390980" alt="ThermoBalance">
+          <div class="lp-card-content"><h4>ThermoBalance™</h4><p>Traspirante e termoregolante. Piede asciutto, fresco e senza odori.</p></div>
+        </div>
+        <div class="lp-card">
+          <img src="https://cdn.shopify.com/s/files/1/0977/4134/1049/files/8.png?v=1770390980" alt="Suola Antiscivolo">
+          <div class="lp-card-content"><h4>Suola Antiscivolo</h4><p>Grip avanzato e tassellatura profonda. Passi sicuri anche su bagnato.</p></div>
+        </div>
+        <div class="lp-card">
+          <img src="https://cdn.shopify.com/s/files/1/0977/4134/1049/files/9.png?v=1770390978" alt="Attivazione Glutei">
+          <div class="lp-card-content"><h4>Attivazione Glutei</h4><p>L'estensione d'anca attiva e solleva i glutei ad ogni camminata.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLUTEI 4 SETTIMANE -->
+  <section class="lp-sec lp-sec-light" style="background:#f7faf9">
+    <div class="lp-inner">
+      <h2>Glutei Scolpiti in <em>4 Settimane</em></h2>
+      <p class="sub">Anche solo 20 minuti al giorno di camminata con SnellaWalk™ bastano per vedere la differenza.</p>
+
+      <div class="lp-timeline">
+        <div class="lp-tl-step">
+          <div class="lp-tl-week">Settimana 1</div>
+          <div class="lp-tl-bar"><div class="lp-tl-fill" style="width:25%"></div></div>
+          <div class="lp-tl-info">
+            <strong>Ti abitui alla suola rocker</strong>
+            <p>Il piede si adatta alla rullata. Senti già i glutei e i polpacci lavorare di più durante la camminata.</p>
+          </div>
+        </div>
+        <div class="lp-tl-step">
+          <div class="lp-tl-week">Settimana 2</div>
+          <div class="lp-tl-bar"><div class="lp-tl-fill" style="width:50%"></div></div>
+          <div class="lp-tl-info">
+            <strong>Meno dolori, più energia</strong>
+            <p>Schiena e ginocchia ringraziano. Cammini più a lungo senza fatica. I muscoli si attivano in automatico.</p>
+          </div>
+        </div>
+        <div class="lp-tl-step">
+          <div class="lp-tl-week">Settimana 3</div>
+          <div class="lp-tl-bar"><div class="lp-tl-fill" style="width:75%"></div></div>
+          <div class="lp-tl-info">
+            <strong>Inizi a vedere i risultati</strong>
+            <p>Le gambe sono più sode. I glutei appaiono più sollevati. La postura è visibilmente più dritta.</p>
+          </div>
+        </div>
+        <div class="lp-tl-step">
+          <div class="lp-tl-week">Settimana 4</div>
+          <div class="lp-tl-bar"><div class="lp-tl-fill" style="width:100%"></div></div>
+          <div class="lp-tl-info">
+            <strong>Glutei scolpiti, silhouette snella</strong>
+            <p>Il cambiamento è evidente. Glutei più tonici, gambe definite e una silhouette più snella. E non hai fatto palestra.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lp-tl-bottom">
+        <div class="lp-tl-badge">⏱️ Solo 20 min/giorno</div>
+        <div class="lp-tl-badge">🚶‍♀️ Cammini e basta</div>
+        <div class="lp-tl-badge">🏋️‍♀️ Zero palestra</div>
+      </div>
+      <p class="lp-tl-disc">*Tempi indicativi: i risultati variano in base a continuità, peso, intensità e stile di camminata.</p>
+    </div>
+  </section>
+
+  <!-- RECENSIONI -->
+  <section class="lp-sec lp-sec-light" id="resenas">
+    <div class="lp-inner">
+      <h2>+2.134 Donne Camminano <em>Diversamente</em></h2>
+      <p class="sub">Recensioni reali di chi ha scelto SnellaWalk™ e non torna indietro.</p>
+
+      <div class="lp-revs" id="lp-revs-container">
+        <!-- BATCH 1 (visible) -->
+        <div class="lp-rev" data-batch="1">
+          <div class="lp-rev-h"><div class="lp-rev-av">M</div><div><div class="lp-rev-name">María G.</div><div class="lp-rev-meta">✓ Verificata · Roma</div><div class="lp-rev-stars">★★★★★</div></div></div>
+          <p>Lavoro in piedi 8 ore al giorno. Prima arrivavo a casa distrutta con mal di schiena. Con le SnellaWalk non ho più dolore e sento le gambe molto più sode. Mi hanno davvero cambiato la giornata.</p>
+        </div>
+        <div class="lp-rev" data-batch="1">
+          <div class="lp-rev-h"><div class="lp-rev-av">C</div><div><div class="lp-rev-name">Carmen R.</div><div class="lp-rev-meta">✓ Verificata · Milano</div><div class="lp-rev-stars">★★★★★</div></div></div>
+          <p>Le ho prese per le ginocchia ma la sorpresa è stata l'effetto sui glutei. In un mese si nota tantissimo. La suola curva all'inizio è strana ma poi non vuoi più cambiare. Ne ordino un altro paio.</p>
+        </div>
+        <div class="lp-rev" data-batch="1">
+          <div class="lp-rev-h"><div class="lp-rev-av">L</div><div><div class="lp-rev-name">Laura P.</div><div class="lp-rev-meta">✓ Verificata · Napoli</div><div class="lp-rev-stars">★★★★★</div></div></div>
+          <p>La suola rocker si sente diversa dal primo passo, ma in 2-3 giorni ti abitui e senti i muscoli lavorare di più. Comodissime per camminare tutto il giorno. Le consiglio a tutte.</p>
+        </div>
+
+        <!-- BATCH 2 (hidden) -->
+        <div class="lp-rev hidden" data-batch="2">
+          <div class="lp-rev-h"><div class="lp-rev-av">A</div><div><div class="lp-rev-name">Ana M.</div><div class="lp-rev-meta">✓ Verificata · Torino</div><div class="lp-rev-stars">★★★★★</div></div></div>
+          <p>Ho la fascite plantare e queste sono le prime scarpe con cui cammino più di un'ora senza dolore. Il plantare OrtoLift è fantastico. Magari le avessi scoperte prima.</p>
+        </div>
+        <div class="lp-rev hidden" data-batch="2">
+          <div class="lp-rev-h"><div class="lp-rev-av">P</div><div><div class="lp-rev-name">Patricia S.</div><div class="lp-rev-meta">✓ Verificata · Firenze</div><div class="lp-rev-stars">★★★★★</div></div></div>
+          <p>Mio marito ha notato il cambiamento nei glutei prima di me! Io quello che noto è che non arrivo più distrutta dal lavoro. Le ginocchia ringraziano. Comprerò un paio anche per mia sorella.</p>
+        </div>
+        <div class="lp-rev hidden" data-batch="2">
+          <div class="lp-rev-h"><div class="lp-rev-av">R</div><div><div class="lp-rev-name">Rosa T.</div><div class="lp-rev-meta">✓ Verificata · Bologna</div><div class="lp-rev-stars">★★★★☆</div></div></div>
+          <p>Arrivate in 2 giorni con GLS, belle e comode fin da subito. Sto aspettando di vedere i risultati con l'uso quotidiano. Per ora la sensazione sulla schiena è già molto buona. Metto 4 stelle e aggiorno presto.</p>
+        </div>
+
+        <!-- BATCH 3 (hidden) -->
+        <div class="lp-rev hidden" data-batch="3">
+          <div class="lp-rev-h"><div class="lp-rev-av">I</div><div><div class="lp-rev-name">Isabel D.</div><div class="lp-rev-meta">✓ Verificata · Palermo</div><div class="lp-rev-stars">★★★★★</div></div></div>
+          <p>Sono infermiera e cammino più di 10km al giorno. Con le SnellaWalk zero dolore alle ginocchia per la prima volta in anni. L'ammortizzazione si sente davvero. Le consiglio a tutte le colleghe.</p>
+        </div>
+        <div class="lp-rev hidden" data-batch="3">
+          <div class="lp-rev-h"><div class="lp-rev-av">E</div><div><div class="lp-rev-name">Elena V.</div><div class="lp-rev-meta">✓ Verificata · Bari</div><div class="lp-rev-stars">★★★★★</div></div></div>
+          <p>Pensavo fosse marketing ma sento davvero i glutei lavorare quando cammino. Le uso per passeggiare con il cane ogni sera, 30 minuti, e dopo un mese vedo la differenza. Entusiasta.</p>
+        </div>
+        <div class="lp-rev hidden" data-batch="3">
+          <div class="lp-rev-h"><div class="lp-rev-av">S</div><div><div class="lp-rev-name">Sandra F.</div><div class="lp-rev-meta">✓ Verificata · Verona</div><div class="lp-rev-stars">★★★★★</div></div></div>
+          <p>Rapporto qualità-prezzo eccezionale al 50% di sconto. Ordinato con contrassegno, arrivate in 2 giorni con GLS. Super comode dal primo momento, piede fresco tutto il giorno. Molto contenta.</p>
+        </div>
+      </div>
+
+      <button class="lp-revs-more" id="lp-revs-btn" onclick="lpShowMore()">Mostra altre recensioni ▾</button>
+
+      <!-- FORM RECENSIONE -->
+      <div class="lp-rev-form-wrap" id="lp-rev-form-wrap">
+        <h3>Lascia la tua recensione</h3>
+        <form id="lp-rev-form" onsubmit="return lpSubmitReview(event)">
+          <div class="lp-rev-field">
+            <label for="lp-rv-name">Nome *</label>
+            <input type="text" id="lp-rv-name" placeholder="Il tuo nome" required>
+          </div>
+          <div class="lp-rev-field">
+            <label>Punteggio *</label>
+            <div class="lp-star-select">
+              <input type="radio" id="lp-s5" name="lp-rating" value="5" required><label for="lp-s5">★</label>
+              <input type="radio" id="lp-s4" name="lp-rating" value="4"><label for="lp-s4">★</label>
+              <input type="radio" id="lp-s3" name="lp-rating" value="3"><label for="lp-s3">★</label>
+              <input type="radio" id="lp-s2" name="lp-rating" value="2"><label for="lp-s2">★</label>
+              <input type="radio" id="lp-s1" name="lp-rating" value="1"><label for="lp-s1">★</label>
+            </div>
+          </div>
+          <div class="lp-rev-field">
+            <label for="lp-rv-text">La tua recensione *</label>
+            <textarea id="lp-rv-text" placeholder="Raccontaci la tua esperienza con le SnellaWalk..." required></textarea>
+          </div>
+          <button type="submit" class="lp-rev-submit">Invia recensione</button>
+        </form>
+        <div class="lp-rev-success" id="lp-rev-success">
+          <div class="lp-rev-success-ic">✅</div>
+          <p><b>Grazie per la tua recensione!</b><br>La tua recensione è in fase di revisione. Verrà pubblicata una volta verificata la sua autenticità.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GARANZIE -->
+  <section class="lp-sec lp-sec-dark">
+    <div class="lp-inner">
+      <h2>Acquista Senza <em>Nessun Rischio</em></h2>
+      <p class="sub">La tua unica preoccupazione: scegliere la taglia.</p>
+      <div class="lp-guar-grid">
+        <div class="lp-guar">
+          <div class="lp-guar-ic">📦</div>
+          <strong>Spedizione GRATIS</strong>
+          <small>Consegna GLS 24-48h</small>
+        </div>
+        <div class="lp-guar">
+          <div class="lp-guar-ic">💰</div>
+          <strong>Pagamento alla Consegna</strong>
+          <small>Paghi al corriere in contanti</small>
+        </div>
+        <div class="lp-guar">
+          <div class="lp-guar-ic">🔄</div>
+          <strong>Reso 14 Giorni</strong>
+          <small>Soddisfatta o rimborsata</small>
+        </div>
+        <div class="lp-guar">
+          <div class="lp-guar-ic">📞</div>
+          <strong>Assistenza Dedicata</strong>
+          <small>WhatsApp o telefono</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASSAGGI -->
+  <section class="lp-sec">
+    <div class="lp-inner">
+      <h2>Ordinare È <em>Semplicissimo</em></h2>
+      <p class="sub">Senza carta di credito, senza registrazione. In 2 minuti è fatto.</p>
+      <div class="lp-pasos">
+        <div class="lp-paso">
+          <div class="lp-paso-n">1</div>
+          <div><h4>Effettua il tuo ordine</h4><p>Nome, indirizzo e telefono. Nient'altro.</p></div>
+        </div>
+        <div class="lp-paso">
+          <div class="lp-paso-n">2</div>
+          <div><h4>Ti contattiamo per confermare</h4><p>Ti scriviamo su WhatsApp per confermare i dati. Se non lo usi, ti chiamiamo.</p></div>
+        </div>
+        <div class="lp-paso">
+          <div class="lp-paso-n">3</div>
+          <div><h4>Ricevi con GLS e paghi al corriere</h4><p>Spedizione GRATIS 24-48h. Paghi in contanti alla consegna.</p></div>
+        </div>
+        <div class="lp-paso">
+          <div class="lp-paso-n">4</div>
+          <div><h4>Non ti convincono? Le restituisci</h4><p>14 giorni per il reso. Senza complicazioni. Soddisfatta o rimborsata.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="lp-sec lp-sec-light">
+    <div class="lp-inner">
+      <h2>Domande <em>Frequenti</em></h2>
+      <details class="lp-faq"><summary>Come funziona il pagamento in contrassegno?</summary><div class="lp-faq-b">Fai l'ordine online, ti contattiamo via WhatsApp per confermare. Se non hai WhatsApp, ti chiamiamo per telefono. Il pacco parte con GLS e paghi in contanti al corriere. Senza carta né anticipi.</div></details>
+      <details class="lp-faq"><summary>Quanto tempo ci vuole per la consegna?</summary><div class="lp-faq-b">Spediamo con corriere espresso GLS. Consegna stimata 24-48 ore lavorative dopo la conferma dell'ordine.</div></details>
+      <details class="lp-faq"><summary>Come scelgo la taglia giusta?</summary><div class="lp-faq-b">La SnellaWalk calza regolare. Se sei tra due taglie, scegli quella più grande. Scrivici su WhatsApp dopo l'ordine se hai dubbi.</div></details>
+      <details class="lp-faq"><summary>Aiutano davvero i glutei e la postura?</summary><div class="lp-faq-b">La suola rocker favorisce l'estensione d'anca e l'attivazione dei glutei ad ogni passo. Il plantare OrtoLift™ allinea la postura. I risultati dipendono dalla costanza: 20-30 minuti di camminata al giorno sono l'ideale.</div></details>
+      <details class="lp-faq"><summary>Posso usarle tutto il giorno?</summary><div class="lp-faq-b">Sì, sono progettate per uso quotidiano prolungato. Se non hai mai usato una suola rocker, inizia gradualmente nei primi 2-3 giorni.</div></details>
+      <details class="lp-faq"><summary>Posso restituirle se non mi piacciono?</summary><div class="lp-faq-b">Hai 14 giorni dalla consegna. Scrivici con il tuo numero d'ordine. Rispondiamo entro 24 ore. Soddisfatta o rimborsata.</div></details>
+      <details class="lp-faq"><summary>Posso usare il mio plantare personalizzato?</summary><div class="lp-faq-b">Sì, la soletta è estraibile. Puoi sostituire il plantare OrtoLift™ con il tuo plantare personalizzato senza problemi.</div></details>
+    </div>
+  </section>
+
+
+
+  <div class="lp-disc">*Questo prodotto non è un dispositivo medico. I benefici percepiti possono variare da persona a persona. Immagini illustrative. Dati basati su sondaggi interni e recensioni verificate. Consulta un professionista per esigenze ortopediche specifiche.</div>
+
+  <div class="lp-spacer"></div>
+  <div class="lp-sticky">
+    <a href="#" class="lp-cta" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">🔥 ORDINA ORA — 49,99€ invece di 99,98€ · GRATIS</a>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var currentBatch = 1;
+  var maxBatch = 3;
+
+  window.lpShowMore = function(){
+    currentBatch++;
+    var items = document.querySelectorAll('#lp-revs-container .lp-rev[data-batch="'+currentBatch+'"]');
+    for(var i=0;i<items.length;i++){
+      items[i].classList.remove('hidden');
+    }
+    if(currentBatch >= maxBatch){
+      document.getElementById('lp-revs-btn').classList.add('hidden');
+    }
+  };
+
+  window.lpSubmitReview = function(e){
+    e.preventDefault();
+    document.getElementById('lp-rev-form').style.display='none';
+    document.getElementById('lp-rev-success').style.display='block';
+    return false;
+  };
+
+  // Nascondi sticky al footer
+  var stickyBar = document.querySelector('.lp-sticky');
+  var footerTrigger = document.querySelector('.lp-disc');
+  if(stickyBar && footerTrigger){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          stickyBar.classList.add('lp-sticky-hidden');
+        } else {
+          stickyBar.classList.remove('lp-sticky-hidden');
+        }
+      });
+    },{threshold:0.1});
+    obs.observe(footerTrigger);
+  }
+})();
+</script>
