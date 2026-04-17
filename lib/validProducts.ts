@@ -133,7 +133,7 @@ export const VALID_PRODUCTS: ValidProduct[] = [
     slug: "deluxe-arch",
     name: "Deluxe Arch",
     price: 49.90,
-    variantIds: [5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909], // sizes 36-43 (using same as aureastep)
+    variantIds: [5974, 5975, 5976, 5977, 5978, 5979, 5980, 5981], // sizes 36-43 (Sandalo Ortopedico)
   },
 ];
 
