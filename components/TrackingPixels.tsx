@@ -14,6 +14,8 @@ export default function TrackingPixels() {
     if (fired.current) return;
     fired.current = true;
 
+    console.log("🎯 TrackingPixels mounted - checking for order data");
+
     let orderTimestamp: string | null = null;
 
     let raw: string | null = null;
@@ -24,15 +26,21 @@ export default function TrackingPixels() {
         orderTimestamp = String(parsed.timestamp || "");
       }
     } catch {}
-    if (!raw) return;
+    if (!raw) {
+      console.log("⚠️ No order data found in localStorage");
+      return;
+    }
 
     /* Verifica se questo ordine è già stato tracciato (chiave per timestamp) */
     const PURCHASE_KEY = orderTimestamp ? `cf_purchase_tracked_${orderTimestamp}` : "cf_purchase_tracked";
     try {
       if (localStorage.getItem(PURCHASE_KEY) === "1") {
+        console.log("⏭️ Order already tracked, skipping");
         return; // Già tracciato, skip
       }
     } catch {}
+
+    console.log("🚀 Processing new order for tracking:", orderTimestamp);
 
     let d: {
       product?: { title?: string };
@@ -90,6 +98,7 @@ export default function TrackingPixels() {
     const markAsFired = () => {
       try {
         localStorage.setItem(PURCHASE_KEY, "1");
+        console.log("✅ Conversion marked as tracked");
       } catch {}
     };
 
@@ -97,18 +106,33 @@ export default function TrackingPixels() {
     let fbOk = tryFb();
     let gOk = tryGtag();
 
-    if (fbOk) markAsFired(); // Segna subito se FB ha sparato
+    // Mark as fired immediately if at least one tracker succeeded
+    if (fbOk || gOk) {
+      markAsFired();
+    }
 
+    // Retry for scripts that haven't loaded yet
     if (!fbOk || !gOk) {
       let attempts = 0;
       const iv = setInterval(() => {
         attempts++;
         if (!fbOk) {
           fbOk = tryFb();
-          if (fbOk) markAsFired();
         }
-        if (!gOk) gOk = tryGtag();
-        if ((fbOk && gOk) || attempts >= 10) clearInterval(iv);
+        if (!gOk) {
+          gOk = tryGtag();
+        }
+
+        // Mark as fired as soon as any tracker succeeds
+        if ((fbOk || gOk) && attempts === 1) {
+          markAsFired();
+        }
+
+        // Stop retrying when both succeed or max attempts reached
+        if ((fbOk && gOk) || attempts >= 10) {
+          clearInterval(iv);
+          console.log("🏁 Tracking complete - FB:", fbOk, "Google:", gOk);
+        }
       }, 500);
     }
   }, []);
