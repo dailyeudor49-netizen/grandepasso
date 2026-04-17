@@ -110,7 +110,7 @@ export function HeroGallery({ images }: { images: string[] }) {
 
   return (
     <div className="md:sticky md:top-24">
-      {lightbox && <Lightbox images={images} active={active} setActive={setActive} alt={`Arvelia Arch - Foto ${active + 1}`} onClose={() => setLightbox(false)} />}
+      {lightbox && <Lightbox images={images} currentIndex={active} onNext={next} onPrev={prev} onClose={() => setLightbox(false)} />}
       <div
         className="relative aspect-square overflow-hidden -mx-4 sm:-mx-6 md:mx-0 md:rounded-lg md:border md:border-gray-200 bg-white md:shadow-sm select-none"
         onTouchStart={(e) => { swipeRef.current = e.touches[0].clientX; isDrag.current = false; }}
