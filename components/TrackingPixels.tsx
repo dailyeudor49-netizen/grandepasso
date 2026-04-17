@@ -72,6 +72,7 @@ export default function TrackingPixels() {
     const tryGtag = () => {
       const w = window as unknown as Record<string, unknown>;
       if (typeof w.gtag === "function") {
+        console.log("🔥 Firing Google Ads conversion:", GADS_CONVERSION, "Value:", value);
         (w.gtag as Function)("event", "conversion", {
           send_to: GADS_CONVERSION,
           value,
@@ -81,6 +82,7 @@ export default function TrackingPixels() {
         });
         return true;
       }
+      console.log("⚠️ gtag not available yet");
       return false;
     };
 
@@ -139,22 +141,7 @@ fbq('track','PageView');`,
         />
       </noscript>
 
-      {/* Google Ads */}
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GADS_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','${GADS_ID}',{send_page_view:false});`,
-        }}
-      />
+      {/* Google Ads tag is loaded globally in layout.tsx */}
     </>
   );
 }
