@@ -4,7 +4,8 @@ import { useEffect, useRef } from "react";
 import Script from "next/script";
 
 const FB_PIXEL_ID = "1576025786901423";
-const GADS_ID = "AW-18070555751";
+const GADS_ID = "AW-17528659507";
+const GADS_CONVERSION = "AW-17528659507/kWnjCITH8Z0cELO8qKZB";
 
 export default function TrackingPixels() {
   const fired = useRef(false);
@@ -67,14 +68,12 @@ export default function TrackingPixels() {
       return false;
     };
 
-    /* Google Ads - Conversion (etichetta dinamica per prodotto) */
-    const gadsConv = d.gadsConv;
+    /* Google Ads - Conversion */
     const tryGtag = () => {
-      if (!gadsConv) return true;
       const w = window as unknown as Record<string, unknown>;
       if (typeof w.gtag === "function") {
         (w.gtag as Function)("event", "conversion", {
-          send_to: gadsConv,
+          send_to: GADS_CONVERSION,
           value,
           currency: "EUR",
           transaction_id:

@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <Link href="/" className="inline-block">
-              <Logo />
+              <Logo variant="white" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-blue-100">
               Con anni di esperienza nel settore, selezioniamo calzature che uniscono comfort, postura e benessere.
