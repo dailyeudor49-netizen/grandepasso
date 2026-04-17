@@ -164,7 +164,7 @@ export default function BestsellersCarousel({ products }: BestsellersCarouselPro
                   {/* Image */}
                   <div className="relative aspect-square overflow-hidden bg-stone-100">
                     <Image
-                      src={product.image}
+                      src={product.image || '/placeholder.png'}
                       alt={product.name}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
