@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/orthostep/carosello");
@@ -22,6 +23,27 @@ export const metadata: Metadata = {
     "Scopri OrthoStep Pro: scarpe ortopediche con tecnologia biomeccanica brevettata. Elimina il dolore ai piedi, ginocchia e schiena. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    icon: "😫",
+    title: "Piedi Gonfi e Doloranti",
+    description: "I tuoi piedi sono gonfi, pesanti e doloranti dopo una giornata normale. Camminare diventa faticoso e arrivi a sera esausta."
+  },
+  {
+    icon: "😣",
+    title: "Mal di Schiena Cronico",
+    description: "Soffri di dolore lombare costante causato da una postura scorretta. La tua schiena è rigida e dolorante ogni giorno."
+  },
+  {
+    icon: "😩",
+    title: "Fascite Plantare",
+    description: "Hai dolore acuto al tallone e alla pianta del piede. Ogni passo è doloroso e le normali scarpe peggiorano il problema."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -227,12 +249,13 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

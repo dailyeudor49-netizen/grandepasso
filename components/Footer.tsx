@@ -2,15 +2,16 @@ import Link from "next/link";
 import Logo from "./Logo";
 
 const footerLinks = {
-  shop: [
-    { href: "/catalogo", label: "Catalogo" },
-    { href: "/catalogo", label: "Novità" },
-    { href: "/catalogo", label: "Offerte" },
+  catalogo: [
+    { href: "/catalogo?categoria=ortopediche", label: "Ortopediche" },
+    { href: "/catalogo?categoria=posturali", label: "Posturali" },
+    { href: "/catalogo?categoria=fitness", label: "Fitness" },
+    { href: "/catalogo?categoria=trekking", label: "Trekking" },
   ],
-  info: [
-    { href: "/contatti", label: "Contatti" },
-    { href: "/politica-resi", label: "Resi e Rimborsi" },
+  assistenza: [
+    { href: "/contatti", label: "Contattaci" },
     { href: "/contatti", label: "FAQ" },
+    { href: "/politica-resi", label: "Resi e Rimborsi" },
   ],
   legal: [
     { href: "/privacy-policy", label: "Privacy Policy" },
@@ -21,31 +22,30 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-stone-200 bg-stone-50">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <footer className="bg-blue-700">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
           {/* Brand */}
-          <div>
+          <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <Link href="/" className="inline-block">
               <Logo />
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-stone-500">
-              Il lusso del comfort. Calzature eleganti che valorizzano
-              il benessere dei tuoi piedi con stile e qualità superiore.
+            <p className="mt-4 text-sm leading-relaxed text-blue-100">
+              Con anni di esperienza nel settore, selezioniamo calzature che uniscono comfort, postura e benessere.
             </p>
           </div>
 
-          {/* Shop */}
+          {/* Catalogo */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-stone-900">
-              Shop
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white">
+              Catalogo
             </h4>
-            <ul className="mt-4 space-y-3">
-              {footerLinks.shop.map((link) => (
+            <ul className="mt-4 space-y-2.5">
+              {footerLinks.catalogo.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-stone-500 transition-colors hover:text-blue-600"
+                    className="text-sm text-blue-100 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -54,36 +54,42 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Info */}
+          {/* Assistenza */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-stone-900">
-              Informazioni
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white">
+              Assistenza
             </h4>
-            <ul className="mt-4 space-y-3">
-              {footerLinks.info.map((link) => (
+            <ul className="mt-4 space-y-2.5">
+              {footerLinks.assistenza.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-stone-500 transition-colors hover:text-blue-600"
+                    className="text-sm text-blue-100 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
+              <li>
+                <p className="text-sm text-blue-200">
+                  <span className="font-semibold text-white">Orari:</span><br />
+                  Lun-Ven 9:00-18:00
+                </p>
+              </li>
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Legale */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-stone-900">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white">
               Legale
             </h4>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-4 space-y-2.5">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-stone-500 transition-colors hover:text-blue-600"
+                    className="text-sm text-blue-100 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -91,14 +97,32 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Contatti */}
+          <div>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white">
+              Contatti
+            </h4>
+            <ul className="mt-4 space-y-2.5 text-sm text-blue-100">
+              <li>
+                <a href="mailto:info@piedeluxe.it" className="transition-colors hover:text-white">
+                  info@piedeluxe.it
+                </a>
+              </li>
+              <li>
+                Via Manzoni 21<br />
+                20121 Milano (MI)
+              </li>
+              <li className="text-blue-200">
+                P.IVA 05793577488
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-10 border-t border-stone-200 pt-6 text-center space-y-1">
-          <p className="text-xs text-stone-400">
+        <div className="mt-12 border-t border-blue-600 pt-8 text-center">
+          <p className="text-sm text-blue-200">
             &copy; {new Date().getFullYear()} Piede Luxe S.r.l. &mdash; Tutti i diritti riservati.
-          </p>
-          <p className="text-xs text-stone-400">
-            Via Manzoni 21, 20121 Milano (MI) &middot; P.IVA 05793577488 &middot; REA MI-1847362 &middot; Cap. Soc. &euro;10.000 i.v.
           </p>
         </div>
       </div>

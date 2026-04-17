@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/aurearise/carosello");
@@ -22,6 +23,27 @@ export const metadata: Metadata = {
     "Scopri AureaRise: la scarpa rialzante uomo con +7cm invisibili e suola ortopedica. Guadagni altezza senza che nessuno lo sappia. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    icon: "😔",
+    title: "Bassa Statura",
+    description: "Ti senti insicuro per la tua altezza e vorresti qualche centimetro in più per sentirti più sicuro di te nelle situazioni sociali e professionali."
+  },
+  {
+    icon: "😣",
+    title: "Scarpe Rialzanti Evidenti",
+    description: "Le scarpe con rialzo tradizionali si vedono subito e sono imbarazzanti. La suola troppo alta si nota e ti senti a disagio."
+  },
+  {
+    icon: "🙈",
+    title: "Mancanza di Fiducia",
+    description: "L'altezza influisce sulla tua autostima. Vorresti sentirti più sicuro negli appuntamenti, al lavoro e nelle relazioni sociali."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -265,13 +287,14 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
+        <ExpertSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/snellawalk360/carosello");
@@ -22,6 +23,27 @@ export const metadata: Metadata = {
     "Scopri le SnellaWalk 360 con suola rocker ortopedica, effetto GluteLift e soletta OrtoLift™. Cammina meglio, attiva i glutei, migliora la postura.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    icon: "😩",
+    title: "Glutei Poco Tonici",
+    description: "I tuoi glutei sono molli e poco definiti. Vorresti un lato B più tonico e sollevato ma non hai tempo per la palestra."
+  },
+  {
+    icon: "😣",
+    title: "Gambe Poco Snelle",
+    description: "Le tue gambe sono poco toniche e vorresti snellirle. Hai provato allenamenti ma non vedi risultati."
+  },
+  {
+    icon: "😫",
+    title: "Postura Scorretta",
+    description: "La tua postura non è corretta e ti causa dolore alla schiena. Vorresti migliorare l'allineamento del corpo mentre cammini."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -211,12 +233,13 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
         <FasiSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

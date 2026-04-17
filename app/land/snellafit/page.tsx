@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/snellafit/carosello");
@@ -22,6 +23,27 @@ export const metadata: Metadata = {
     "SnellaFit: la scarpa fitness che brucia calorie ad ogni passo. Glutei tonici, gambe snelle e postura perfetta. Risultati visibili in 2 settimane. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    icon: "😩",
+    title: "Gambe Poco Toniche",
+    description: "Le tue gambe e glutei sono molli e poco definiti. Vorresti un fisico più tonico ma non hai tempo per la palestra."
+  },
+  {
+    icon: "😣",
+    title: "Sedentarietà e Peso Extra",
+    description: "Passi troppo tempo seduta e hai qualche chilo di troppo. Vorresti dimagrire ma non riesci a trovare la motivazione per l'esercizio."
+  },
+  {
+    icon: "😫",
+    title: "Risultati Lenti",
+    description: "Hai provato diete e allenamenti ma i risultati sono troppo lenti. Vorresti un modo più facile per tonificare il corpo."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -265,13 +287,14 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
+        <ExpertSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

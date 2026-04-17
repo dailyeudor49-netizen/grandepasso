@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/vitanovasecret/carosello");
@@ -22,6 +23,24 @@ export const metadata: Metadata = {
     "Scopri LuxeSecret: la scarpa rialzante con tacco invisibile +7cm e suola ortopedica. Guadagni altezza senza dolore da tacchi. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    title: "I Tacchi Fanno Male. Sempre.",
+    description: "Dopo 2 ore i piedi bruciano. Il tallone protesta. Le ginocchia cedono. La schiena si irrigidisce. Arrivi a casa e togli le scarpe come se togliessi una tortura. E domani ricomincia."
+  },
+  {
+    title: "Essere Bassa Ti Pesa Più di Quanto Ammetti",
+    description: "Nelle foto di gruppo sparisci. Agli eventi devi stare in punta di piedi. Ai colloqui devi alzare la voce per farti notare. L'altezza non dovrebbe decidere come ti trattano."
+  },
+  {
+    title: "Le Scarpe Rialzanti Si Vedono",
+    description: "Plateau enormi, suole esagerate, tacco visibile. Tutti capiscono. Il segreto non è più tale. E comunque dopo un'ora fanno male come i tacchi normali."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -265,13 +284,14 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
+        <ExpertSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

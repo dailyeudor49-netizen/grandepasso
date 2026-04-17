@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     "Scopri AureaCloud: ciabatte platform stile Crocs/Labubu con rialzo segreto di 6cm. Comodità estrema + altezza extra invisibile. Spedizione gratuita e pagamento alla consegna.",
 };
 
-
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
    ════════════════════════════════════════════════════════════════════ */
@@ -30,156 +29,186 @@ export const metadata: Metadata = {
 function HeroSection() {
   const images = getCarouselImages();
   return (
-    <section className="mx-auto max-w-7xl px-4 pt-6 pb-10 md:pt-10 md:pb-14 sm:px-6 lg:px-8">
-      <div className="grid items-start gap-8 md:grid-cols-2 md:gap-12">
-        {/* Gallery (client) */}
-        <HeroGallery images={images} />
-
-        {/* Product Info */}
+    <section className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8 pt-2 pb-6 md:pt-5 md:pb-10">
+      <div className="grid items-start gap-4 md:gap-6 md:grid-cols-2 lg:[grid-template-columns:1.15fr_1fr]">
+        {/* LEFT: Solo Gallery */}
         <div>
-          {/* Badges */}
-          <div className="mb-4 flex flex-wrap gap-2">
-            <span className="rounded-full border border-pink-200 bg-pink-50 px-3 py-1 text-xs font-bold text-pink-700">
-              Stile Labubu
-            </span>
-            <span className="rounded-full border border-purple-200 bg-purple-50 px-3 py-1 text-xs font-bold text-purple-700">
-              +6cm Invisibili
-            </span>
-            <span className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">
-              Trend 2025
-            </span>
-          </div>
+          <HeroGallery images={images} />
+        </div>
 
-          {/* Title */}
-          <h1 className="mb-1 text-2xl font-extrabold tracking-tight text-gray-900 md:text-3xl">
-            <span className="text-pink-600">AureaCloud</span> — Comode Come Crocs. Alte 6 cm. Nessuno Lo Saprà.
-          </h1>
-          <p className="mb-4 text-base font-medium text-gray-500">
-            La ciabatta platform con rialzo segreto integrato. Comfort leggendario stile Crocs, design kawaii Labubu, e 6 centimetri in più che nessuno vedrà mai. Il tacco nascosto che sembra una ciabatta.
-          </p>
-
-          {/* Rating */}
-          <a href="#resenas" className="mb-5 flex items-center gap-2 no-underline">
-            <span className="text-lg text-blue-400">★★★★★</span>
-            <span className="text-sm font-extrabold text-gray-900">4,9/5</span>
-            <span className="text-sm text-gray-400 underline underline-offset-2">(2.847 recensioni)</span>
-          </a>
-
-          {/* Price */}
-          <div className="mb-6 flex items-baseline gap-3">
-            <span className="text-4xl font-extrabold text-green-600">€49,90</span>
-            <span className="text-xl text-gray-400 line-through">€99,90</span>
-            <span className="rounded-full border border-red-200 bg-red-50 px-2.5 py-0.5 text-xs font-bold text-red-600">
+        {/* RIGHT: Tutto il contenuto prodotto */}
+        <div>
+          {/* Price in alto */}
+          <div className="mb-4 flex items-baseline gap-2.5">
+            <span className="text-[36px] md:text-[42px] font-extrabold text-[#2B6E44]">€49,90</span>
+            <span className="text-[18px] md:text-[20px] text-[#9B9790] line-through">€99,90</span>
+            <span className="inline-flex items-center rounded-[5px] bg-[#FDE8E8] px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.1em] text-[#D63031]">
               -50%
             </span>
           </div>
 
-          {/* Divider */}
-          <div className="mb-6 h-px bg-gray-200" />
-
           {/* Feature bullets */}
-          <ul className="mb-6 space-y-2.5">
+          <div className="mb-5 rounded-[14px] border border-[#E2E4E8] bg-white divide-y divide-[#E2E4E8] shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
             {[
-              { bold: "+6 cm REALI e invisibili", rest: "il rialzo è nascosto dentro la suola, dall'esterno sembrano normali ciabatte platform" },
-              { bold: "Comode come le Crocs", rest: "stessa morbidezza cloud, stesso comfort leggendario, ma con il rialzo segreto" },
-              { bold: "Design Labubu kawaii", rest: "lo stile trendy che spopola su TikTok, ora con il benefit del rialzo nascosto" },
-              { bold: "Ultraleggere, solo 280g", rest: "le indossi tutto il giorno senza mai sentirle ai piedi" },
-              { bold: "Perfette per ogni occasione", rest: "casa, spiaggia, shopping, aperitivo — sei sempre 6cm più alta" },
-              { bold: "Charm decorativi inclusi", rest: "personalizza le tue AureaCloud, in omaggio" },
-            ].map((f) => (
-              <li key={f.bold} className="border-l-[3px] border-pink-500 rounded-lg py-2.5 px-4 text-[16px] bg-white">
-                <span className="text-gray-700">
-                  <b className="font-bold text-gray-900">{f.bold}</b> — {f.rest}
-                </span>
-              </li>
+              { icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6", text: "+6 cm reali e invisibili — il rialzo è nascosto dentro la suola" },
+              { icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z", text: "Comode come le Crocs — stesso comfort leggendario, ma con rialzo segreto" },
+              { icon: "M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7", text: "Design Labubu kawaii — lo stile trendy di TikTok con rialzo nascosto" },
+              { icon: "M5 13l4 4L19 7", text: "Ultraleggere, solo 280g — le indossi tutto il giorno senza sentirle" },
+            ].map((f, i) => (
+              <div key={i} className="flex items-start gap-3 p-3.5">
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#EEF1F7]">
+                  <svg className="h-4 w-4 text-[#3b82f6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d={f.icon} />
+                  </svg>
+                </div>
+                <p className="text-[14px] leading-[1.65] text-[#1A1917]">{f.text}</p>
+              </div>
             ))}
-          </ul>
+          </div>
 
           {/* Order section: variant selectors + trigger + modal */}
           <OrderSection image={images[0] || ""} />
 
           {/* Shipping & Payment options */}
-          <div className="space-y-3 rounded-xl border border-stone-200 bg-white p-4">
+          <div className="mt-4 space-y-3 rounded-[14px] border border-[#E2E4E8] bg-white p-4 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-stone-500">Opzioni di Spedizione</p>
-              <label className="mt-2 flex cursor-default items-center gap-3 rounded-lg border-2 border-green-500 bg-green-50/50 px-4 py-3">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-green-500">
-                  <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
+              <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#9B9790]">Spedizione</p>
+              <label className="mt-2 flex cursor-default items-center gap-3 rounded-[8px] border-2 border-[#2B6E44] bg-[#E6F4EC] px-4 py-3">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-[#2B6E44]">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#2B6E44]" />
                 </span>
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-stone-900">Spedizione Express GLS</p>
-                  <p className="text-[13px] text-stone-500">Consegna in 24-48h</p>
+                  <p className="text-[14px] font-bold text-[#1A1917]">Spedizione Express GLS</p>
+                  <p className="text-[13px] text-[#5A5752]">Consegna in 24-48h</p>
                 </div>
-                <span className="text-sm font-bold text-green-600">GRATUITA</span>
+                <span className="text-[14px] font-bold text-[#2B6E44]">GRATUITA</span>
               </label>
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-stone-500">Opzioni di Pagamento</p>
-              <label className="mt-2 flex cursor-default items-center gap-3 rounded-lg border-2 border-blue-500 bg-blue-50/50 px-4 py-3">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-blue-500">
-                  <span className="h-2.5 w-2.5 rounded-full bg-blue-500" />
+              <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#9B9790]">Pagamento</p>
+              <label className="mt-2 flex cursor-default items-center gap-3 rounded-[8px] border-2 border-[#3b82f6] bg-[#EEF1F7] px-4 py-3">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-[#3b82f6]">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#3b82f6]" />
                 </span>
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-stone-900">Pagamento Contanti alla Consegna</p>
-                  <p className="text-[13px] text-stone-500">Paghi direttamente al corriere</p>
+                  <p className="text-[14px] font-bold text-[#1A1917]">Pagamento Contanti alla Consegna</p>
+                  <p className="text-[13px] text-[#5A5752]">Paghi direttamente al corriere</p>
                 </div>
               </label>
             </div>
           </div>
 
-          {/* Refund guarantee */}
-          <div className="mt-3 mb-5 flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3 shadow-sm">
-            <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-pink-50 text-pink-600">
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
-                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <p className="text-sm leading-snug text-stone-600">
-              <span className="font-semibold text-stone-800">Garanzia soddisfatti o rimborsati.</span> Se non ti piacciono, puoi richiedere un rimborso entro 30 giorni dalla consegna.
-            </p>
-          </div>
-
-          {/* How it works box */}
-          <div className="mb-5 rounded-2xl border border-gray-100 bg-gradient-to-br from-gray-50 to-white p-5 shadow-sm">
-            <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-pink-600 sm:text-sm">Semplice e sicuro</p>
-            <h3 className="mb-4 text-xl font-extrabold text-gray-900 sm:text-2xl">Come ordinare?</h3>
-
-            <div className="mb-4 grid grid-cols-2 gap-2.5">
+          {/* Come funziona l'ordine? */}
+          <div className="mt-4 rounded-[14px] border border-[#E2E4E8] bg-white p-5 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+            <h3 className="mb-4 text-[18px] font-bold text-[#1A1917]">Come funziona l&apos;ordine?</h3>
+            <div className="space-y-3">
               {[
-                { step: "1", title: "Ordina", desc: "Compila il modulo con nome, indirizzo e telefono." },
-                { step: "2", title: "Conferma", desc: "Ricevi WhatsApp per confermare. Se non lo usi, ti chiamiamo." },
-                { step: "3", title: "Spedizione 24–48h", desc: "Dopo la conferma il pacco parte subito con GLS. Paghi al corriere." },
-                { step: "4", title: "Reso facile 30 giorni", desc: "Soddisfatti o rimborsati. Assistenza via WhatsApp/telefono." },
+                { step: "1", title: "Scegli taglia e colore", desc: "Seleziona la tua misura EU. Se sei tra due taglie, scegli la più grande — calzata regolare." },
+                { step: "2", title: "Clicca «Ordina ora»", desc: "Inserisci i dati di spedizione. Nessun pagamento anticipato, nessun account necessario." },
+                { step: "3", title: "Ti chiamiamo o scriviamo", desc: "Ti contattiamo (Lun–Ven 9:00–17:00) per confermare l'ordine. Ordini del venerdì dopo le 17:00 → spediti lunedì." },
+                { step: "4", title: "Ricevi e paga al corriere", desc: "Il pacco arriva in 24-48h con GLS Express. Spedizione gratuita, paghi in contanti al corriere." },
               ].map((s) => (
-                <div key={s.step} className="rounded-lg border-l-[3px] border-pink-500 bg-white py-2.5 px-3.5">
-                  <p className="text-[17px] font-extrabold text-pink-700">{s.step}. {s.title}</p>
-                  <p className="mt-0.5 text-[15px] leading-snug text-gray-500">{s.desc}</p>
+                <div key={s.step} className="flex items-start gap-3">
+                  <div className="flex h-6 w-6 min-w-[24px] shrink-0 items-center justify-center rounded-full bg-[#2B6E44] text-[12px] font-bold text-white">
+                    {s.step}
+                  </div>
+                  <div>
+                    <p className="mb-0.5 text-[14px] font-bold text-[#1A1917]">{s.title}</p>
+                    <p className="text-[13px] leading-[1.65] text-[#5A5752]">{s.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
-
-            <div className="flex flex-wrap gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200 bg-pink-50 px-3 py-1.5 text-xs font-bold text-pink-700">
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none">
-                  <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                Zero anticipi
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200 bg-pink-50 px-3 py-1.5 text-xs font-bold text-pink-700">
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none">
-                  <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                Conferma rapida
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200 bg-pink-50 px-3 py-1.5 text-xs font-bold text-pink-700">
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none">
-                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                Assistenza prima della spedizione
-              </span>
-            </div>
           </div>
 
+          {/* Garanzia */}
+          <div className="mt-4 rounded-[14px] border border-[#E2E4E8] bg-white p-4 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+            <div className="flex items-start gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] bg-[#EEF1F7]">
+                <svg viewBox="0 0 24 24" className="h-5 w-5 text-[#3b82f6]" fill="none">
+                  <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="mb-1 text-[15px] font-bold text-[#1A1917]">Garanzia soddisfatto o rimborsato — 30 giorni</h3>
+                <p className="text-[13px] leading-[1.65] text-[#5A5752]">
+                  Non sei soddisfatto? Scrivi a <a href="mailto:supporto@piedeluxe.com" className="text-[#3b82f6] underline">supporto@piedeluxe.com</a> entro 30 giorni. Ritiriamo noi il pacco e il rimborso è immediato. <strong>Zero rischi.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+/* ════════════════════════════════════════════════════════════════════
+   PROBLEM / SOLUTION COMPARISON
+   ════════════════════════════════════════════════════════════════════ */
+
+function ProblemSolutionSection() {
+  return (
+    <section className="py-12 md:py-16">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+        <div className="mb-8 text-center">
+          <h2 className="mb-3 text-[27px] md:text-[33px] leading-[1.22] tracking-[-0.015em] font-bold text-[#1A1917]">
+            Prima Soffrivi. <span className="text-[#3b82f6]">Ora Sorridi.</span>
+          </h2>
+          <p className="text-[16px] leading-[1.65] text-[#5A5752]">
+            Le AureaCloud risolvono i problemi che hai sempre avuto con le scarpe tradizionali.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-2">
+          {/* Problems */}
+          <div className="rounded-[14px] border border-[#E2E4E8] bg-white p-5 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-[5px] border border-[#D63031] bg-[#FDE8E8] px-3 py-1.5">
+              <span className="text-[16px]">❌</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#D63031]">PROBLEMI</span>
+            </div>
+            <ul className="space-y-3">
+              {[
+                { title: "Tacchi altissimi che fanno male", desc: "Dopo un'ora non li sopporti più. Schiena, piedi, ginocchia — tutto fa male." },
+                { title: "Rialzi evidenti e imbarazzanti", desc: "Si vede subito il trucco. Tutti capiscono che le usi per sembrare più alta." },
+                { title: "Ciabatte piatte e scomode", desc: "Comode sì, ma ti fanno sembrare ancora più bassa. Zero autostima." },
+                { title: "Pesanti e rigide", desc: "Le indossi e dopo mezz'ora hai i piedi distrutti. Dimentica di usarle tutto il giorno." },
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-1 text-[16px] shrink-0">😔</span>
+                  <div>
+                    <p className="text-[14px] font-bold text-[#1A1917]">{item.title}</p>
+                    <p className="text-[13px] leading-[1.65] text-[#5A5752]">{item.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Solutions */}
+          <div className="rounded-[14px] border border-[#E2E4E8] bg-white p-5 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-[5px] border border-[#2B6E44] bg-[#E6F4EC] px-3 py-1.5">
+              <span className="text-[16px]">✅</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#2B6E44]">SOLUZIONI</span>
+            </div>
+            <ul className="space-y-3">
+              {[
+                { title: "6cm in più, comfort totale", desc: "Il rialzo è nascosto nella suola. Sei più alta, ma cammini come se fossero normali ciabatte." },
+                { title: "Rialzo invisibile al 100%", desc: "Nessuno lo vedrà mai. Dall'esterno sono ciabatte platform trendy. Il segreto è tutto dentro." },
+                { title: "Platform trendy e comode", desc: "Design Labubu kawaii che va di moda. Sei alta E comoda. Finalmente." },
+                { title: "Leggerissime, solo 280g", desc: "Le indossi tutto il giorno senza problemi. Comfort cloud che non stanca mai." },
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-1 text-[16px] shrink-0">😊</span>
+                  <div>
+                    <p className="text-[14px] font-bold text-[#1A1917]">{item.title}</p>
+                    <p className="text-[13px] leading-[1.65] text-[#5A5752]">{item.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -187,41 +216,389 @@ function HeroSection() {
 }
 
 /* ════════════════════════════════════════════════════════════════════
-   EXPERT SECTION (Influencer/Stylist)
+   FEATURES GRID (6 CARDS)
    ════════════════════════════════════════════════════════════════════ */
 
-function ExpertSection() {
+const techCards = [
+  { img: "/images/land/aureacloud/card/card1.jpeg", alt: "Rialzo Invisibile 6cm", chip: "Tacco Segreto", title: "Rialzo Integrato Invisibile", text: "6 cm nascosti nella suola platform. Dall'esterno sono normali ciabatte trendy. Il tuo segreto resta invisibile." },
+  { img: "/images/land/aureacloud/card/card2.jpeg", alt: "Materiale Cloud Ultra-Morbido", chip: "Comfort Cloud", title: "Materiale Cloud Ultra-Morbido", text: "Stessa tecnologia delle Crocs originali. Morbidezza estrema, leggerezza totale. Cammini sulle nuvole. Letteralmente." },
+  { img: "/images/land/aureacloud/card/card3.jpeg", alt: "Design Labubu Kawaii", chip: "Stile Labubu", title: "Design Labubu Kawaii", text: "Lo stile che ha conquistato TikTok e le fashion week asiatiche. Trendy, unico, impossibile non farsi notare." },
+  { img: "/images/land/aureacloud/card/card4.jpeg", alt: "Suola Anti-Scivolo", chip: "Sicurezza Grip", title: "Suola Anti-Scivolo Premium", text: "Pattern di aderenza studiato per superfici bagnate e asciutte. Sicura in piscina, sicura in città. Ovunque." },
+  { img: "/images/land/aureacloud/card/card5.jpeg", alt: "Fori di Areazione", chip: "Traspirante", title: "Fori di Areazione Strategici", text: "I fori mantengono il piede fresco e asciutto tutto il giorno. Zero sudore, zero odore. Anche d'estate." },
+  { img: "/images/land/aureacloud/card/card6.jpeg", alt: "Charm Personalizzabili", chip: "Personalizzazione", title: "Compatibile con Charm e Accessori", text: "Aggiungi i tuoi charm preferiti e personalizza il tuo stile. Ogni paio è unico. Come te." },
+];
+
+function FeaturesGridSection() {
   return (
-    <section className="expert-section">
-      <div className="expert-container">
-        <div className="expert-image-col">
-          <img
-            src="/images/land/aureacloud/gif.gif"
-            alt="AureaCloud - Ciabatte Platform con Rialzo Segreto"
-            className="expert-image"
-          />
-        </div>
-        <div className="expert-text-col">
-          <span className="expert-badge">Il Segreto delle Influencer</span>
-          <h2 className="expert-title">
-            &ldquo;Finalmente posso essere alta senza soffrire. Le uso dal mattino alla sera.&rdquo;
+    <section className="bg-[#FCFCFA] py-12 md:py-16">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+        <div className="mb-8 text-center">
+          <h2 className="mb-3 text-[27px] md:text-[33px] leading-[1.22] tracking-[-0.015em] font-bold text-[#1A1917]">
+            6 Caratteristiche che le Rendono <span className="text-[#3b82f6]">Uniche</span>
           </h2>
-          <p className="expert-attribution">
-            Sofia C. — Fashion Content Creator, Milano
+          <p className="text-[16px] leading-[1.65] text-[#5A5752]">
+            Non sono solo belle. Sono progettate per darti comfort e altezza senza compromessi.
           </p>
-          <p className="expert-text">
-            Ho provato ogni tipo di scarpa rialzante — scomode, rigide, e si vedeva sempre il trucco. Le AureaCloud sono diverse.{" "}
-            <strong>
-              Sembrano delle normalissime ciabatte trendy, le metti e stai subito 6cm più alta. Sono morbidissime, le uso tutto il giorno. Le amiche mi chiedono sempre: &quot;ma come fai a sembrare più alta?&quot; — e io sorrido. Il segreto è tutto nella suola.
-            </strong>
+        </div>
+
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
+          {techCards.map((c) => (
+            <div key={c.title} className="flex h-full flex-col overflow-hidden rounded-[14px] border border-[#E2E4E8] bg-white shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+              <div className="aspect-square overflow-hidden bg-[#FCFCFA] p-4 pb-0">
+                <img src={c.img} alt={c.alt} className="h-full w-full object-contain" />
+              </div>
+              <div className="p-5 pt-3">
+                <span className="mb-2 inline-flex items-center rounded-[5px] bg-[#EEF1F7] px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.1em] text-[#3b82f6]">
+                  {c.chip}
+                </span>
+                <h3 className="mb-2 text-[18px] font-extrabold text-[#1A1917]">{c.title}</h3>
+                <p className="text-[14px] leading-[1.65] text-[#5A5752]">{c.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   BEFORE / AFTER SECTION
+   ════════════════════════════════════════════════════════════════════ */
+
+function BeforeAfterSection() {
+  return (
+    <section className="py-12 md:py-16">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+        <div className="mb-8 text-center">
+          <h2 className="mb-3 text-[27px] md:text-[33px] leading-[1.22] tracking-[-0.015em] font-bold text-[#1A1917]">
+            La Differenza È <span className="text-[#3b82f6]">Visibile</span>
+          </h2>
+          <p className="text-[16px] leading-[1.65] text-[#5A5752]">
+            6 centimetri cambiano tutto. Postura, proporzioni, sicurezza. E nessuno lo saprà mai.
           </p>
-          <div className="expert-badges">
-            <span className="expert-check">✓ Rialzo 100% Invisibile</span>
-            <span className="expert-check">✓ Trend TikTok 2025</span>
+        </div>
+
+        <div className="relative mx-auto max-w-3xl">
+          {/* Before/After Image Container */}
+          <div className="relative overflow-hidden rounded-[14px] border border-[#E2E4E8] shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+            <img
+              src="/images/land/aureacloud/vs.jpeg"
+              alt="Prima e Dopo AureaCloud - Differenza Visibile"
+              className="w-full"
+            />
+          </div>
+
+          {/* Benefits Pills */}
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            {[
+              { icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6", text: "Postura corretta" },
+              { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", text: "Glutei sollevati" },
+              { icon: "M13 10V3L4 14h7v7l9-11h-7z", text: "Gambe slanciate" },
+              { icon: "M5 13l4 4L19 7", text: "Più sicurezza" },
+            ].map((item, i) => (
+              <div key={i} className="inline-flex items-center gap-2 rounded-full border border-[#E2E4E8] bg-white px-3 py-2 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+                <svg className="h-4 w-4 text-[#3b82f6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                </svg>
+                <span className="text-[14px] font-bold text-[#1A1917]">{item.text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   REVIEWS SECTION
+   ════════════════════════════════════════════════════════════════════ */
+
+function LpReviewsSection() {
+  return (
+    <section className="bg-[#FCFCFA] py-12 md:py-16" id="resenas">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-8 text-center">
+          <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.15em] text-[#FF6B35]">RECENSIONI</p>
+          <h2 className="mb-4 text-[27px] md:text-[33px] leading-[1.22] tracking-[-0.015em] font-bold text-[#1A1917]">
+            Recensioni delle clienti
+          </h2>
+          <div className="flex items-center justify-center gap-2">
+            {/* Stelle piccole arancioni */}
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="h-4 w-4 fill-[#FFB800]" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
+                </svg>
+              ))}
+            </div>
+            <span className="text-[16px] font-bold text-[#1A1917]">4,9/5</span>
+            <span className="text-[14px] text-[#9B9790]">· 1.624 recensioni</span>
+            <span className="inline-flex items-center gap-1 rounded-[5px] bg-[#E6F4EC] px-2 py-1 text-[11px] font-semibold text-[#2B6E44]">
+              verificate
+            </span>
+          </div>
+        </div>
+        <LpReviews />
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   FAQ SECTION
+   ════════════════════════════════════════════════════════════════════ */
+
+function LpFaqSection() {
+  return (
+    <section className="py-12 md:py-16">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+        <div className="mb-8 text-center">
+          {/* Orange FAQ badge */}
+          <div className="mb-3 inline-flex items-center rounded-[5px] bg-[#3b82f6] px-3 py-1.5">
+            <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-white">FAQ</span>
+          </div>
+          <h2 className="mb-3 text-[27px] md:text-[33px] leading-[1.22] tracking-[-0.015em] font-bold text-[#1A1917]">
+            Domande Frequenti
+          </h2>
+
+          {/* Search input */}
+          <div className="mx-auto max-w-2xl mb-6">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Cerca nelle FAQ (es. spedizione, taglia, reso...)"
+                className="w-full rounded-[14px] border border-[#E2E4E8] bg-white px-4 py-3 pl-11 text-[14px] text-[#1A1917] outline-none transition-colors focus:border-[#3b82f6] focus:shadow-[0_0_0_3px_rgba(59,130,246,0.1)] shadow-[0_1px_3px_rgba(26,25,23,0.04)]"
+              />
+              <svg viewBox="0 0 24 24" className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 fill-none stroke-[#9B9790]" strokeWidth="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" strokeLinecap="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div className="mx-auto max-w-4xl">
+          <LpFaq />
+
+          {/* Show all button */}
+          <div className="mt-6 text-center">
+            <button className="inline-flex items-center gap-2 rounded-full border-2 border-[#3b82f6] bg-white px-6 py-3 text-[14px] font-bold text-[#3b82f6] transition-colors hover:bg-[#3b82f6] hover:text-white shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+              Mostra tutte le domande
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   TRUSTPILOT SECTION
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════════════
+   LOGISTICS / SHIPPING INFO SECTION
+   ════════════════════════════════════════════════════════════════════ */
+
+function LogisticsSection() {
+  return (
+    <section className="py-12 md:py-16">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+        {/* LOGISTICS SECTION */}
+        <div className="mb-8 rounded-[14px] border border-[#E2E4E8] bg-white p-6 md:p-8 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+          <div className="mb-6 flex items-center justify-between">
+            <div className="inline-flex items-center rounded-[5px] bg-[#2B6E44] px-3 py-1.5">
+              <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-white">LOGISTICA</span>
+            </div>
+            <div className="flex h-8 items-center justify-center rounded-[8px] bg-white px-3">
+              <span className="text-[16px] font-extrabold text-[#2B6E44]">GLS</span>
+            </div>
+          </div>
+
+          <h2 className="mb-6 text-[24px] md:text-[33px] font-bold text-[#1A1917]">Spediamo con GLS Express</h2>
+
+          <div className="mb-6 grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-3">
+            {[
+              { icon: "M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z", title: "Spedizione gratuita 24-48h", desc: "Consegna express in tutta Italia. Sempre gratis, nessun costo nascosto." },
+              { icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z", title: "Ti chiamiamo o scriviamo per confermare", desc: "Ti contattiamo via WhatsApp o telefono per confermare l'ordine prima di spedire." },
+              { icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z", title: "Ordini venerdì dopo 17:00 confermati lunedì", desc: "Gli ordini del weekend vengono confermati il lunedì mattina." },
+            ].map((item, i) => (
+              <div key={i} className="rounded-[14px] border border-[#E2E4E8] bg-white p-5 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-[8px] bg-[#E6F4EC]">
+                  <svg className="h-5 w-5 fill-[#2B6E44]" viewBox="0 0 24 24">
+                    <path d={item.icon} />
+                  </svg>
+                </div>
+                <h3 className="mb-2 text-[16px] font-bold text-[#1A1917]">{item.title}</h3>
+                <p className="text-[14px] leading-[1.65] text-[#5A5752]">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {["Spedizione gratuita", "Pagamento alla consegna", "Consegna 24-48h"].map((text, i) => (
+              <span key={i} className="inline-flex items-center gap-1.5 rounded-full bg-[#E6F4EC] px-4 py-2 text-[14px] font-bold text-[#2B6E44]">
+                <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                {text}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* TRUSTPILOT SECTION */}
+        <div className="rounded-[14px] border border-[#E2E4E8] bg-white p-6 md:p-8 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+          {/* Header - Centrato */}
+          <div className="mb-6 text-center">
+            {/* Logo Trustpilot con testo */}
+            <div className="mb-3 inline-flex items-center gap-2">
+              <svg viewBox="0 0 24 24" className="h-7 w-7 fill-[#00B67A]">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
+              </svg>
+              <span className="text-[24px] font-bold text-[#1A1917]">Trustpilot</span>
+            </div>
+
+            {/* Stelle */}
+            <div className="mb-3 flex justify-center gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="h-5 w-5 fill-[#00B67A]" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
+                </svg>
+              ))}
+            </div>
+
+            <p className="mb-2 text-[16px] font-bold text-[#1A1917]">Valutato Eccellente · 4.8 su 5 basato su 483 recensioni</p>
+            <p className="mb-6 text-[14px] text-[#5A5752]">Recensioni Generali del Negozio Calzame</p>
+          </div>
+
+          {/* Review Cards - Horizontal Carousel */}
+          <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { name: "Sofia M.", time: "2 giorni fa", text: "Prodotto eccellente, spedizione velocissima. Molto soddisfatta dell'acquisto!" },
+              { name: "Chiara B.", time: "1 settimana fa", text: "Ottima qualità e assistenza clienti impeccabile. Consiglio vivamente!" },
+              { name: "Giulia R.", time: "2 settimane fa", text: "Le scarpe sono comodissime e arrivate in tempo. Perfette!" },
+              { name: "Elena P.", time: "3 settimane fa", text: "Servizio eccezionale. Prodotti di alta qualità. Tornerò sicuramente!" },
+            ].map((review, i) => (
+              <div key={i} className="rounded-[14px] border border-[#E2E4E8] bg-white p-4 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+                <div className="mb-2 flex gap-0.5">
+                  {[...Array(5)].map((_, idx) => (
+                    <svg key={idx} className="h-4 w-4 fill-[#00B67A]" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
+                    </svg>
+                  ))}
+                </div>
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1 rounded-[5px] bg-[#E6F4EC] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#2B6E44]">
+                    <svg viewBox="0 0 24 24" className="h-3 w-3" fill="currentColor">
+                      <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    Verificata
+                  </span>
+                </div>
+                <p className="mb-2 text-[14px] font-bold text-[#1A1917]">{review.text}</p>
+                <div className="flex items-center justify-between text-[12px] text-[#9B9790]">
+                  <span>{review.name}</span>
+                  <span>{review.time}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Footer */}
+          <p className="text-center text-[12px] text-[#9B9790]">
+            Recensioni prese in modo casuale dal nostro profilo TrustPilot
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   REFUND POLICY SECTION
+   ════════════════════════════════════════════════════════════════════ */
+
+function RefundPolicySection() {
+  return (
+    <section className="bg-[#FCFCFA] py-12 md:py-16">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+          {/* Image */}
+          <div className="flex items-center justify-center">
+            <div className="relative">
+              <img
+                src="/images/land/aureacloud/carosello/1.jpeg"
+                alt="AureaCloud - Reso Facile"
+                className="relative aspect-square w-full max-w-md rounded-[14px] border border-[#E2E4E8] object-cover shadow-[0_1px_3px_rgba(26,25,23,0.04)]"
+              />
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-col justify-center">
+            <h2 className="mb-6 text-[27px] md:text-[33px] leading-[1.22] tracking-[-0.015em] font-bold text-[#1A1917]">
+              Reso Facile <span className="text-[#3b82f6]">Entro 30 Giorni</span>
+            </h2>
+
+            <div className="mb-6 space-y-4">
+              {[
+                { step: "1", title: "Contattaci entro 30 giorni", desc: "Scrivici su WhatsApp o via email per richiedere il reso. Ti risponderemo subito." },
+                { step: "2", title: "Spedisci il prodotto", desc: "Rimanda le AureaCloud nella confezione originale. Ti forniamo tutte le istruzioni." },
+                { step: "3", title: "Ricevi il rimborso completo", desc: "Appena riceviamo il prodotto, ti rimborsiamo l'intero importo. Senza domande." },
+              ].map((item) => (
+                <div key={item.step} className="flex items-start gap-3">
+                  <div className="flex h-6 w-6 min-w-[24px] shrink-0 items-center justify-center rounded-full bg-[#3b82f6] text-[12px] font-bold text-white">
+                    {item.step}
+                  </div>
+                  <div>
+                    <h3 className="mb-1 text-[16px] font-bold text-[#1A1917]">{item.title}</h3>
+                    <p className="text-[14px] leading-[1.65] text-[#5A5752]">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {[
+                { icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z", text: "Assistenza dedicata" },
+                { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", text: "Garanzia soddisfatti" },
+                { icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15", text: "Procedura semplice" },
+              ].map((item, i) => (
+                <div key={i} className="rounded-[8px] border border-[#E2E4E8] bg-white p-3 text-center shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+                  <div className="mb-2 flex justify-center">
+                    <svg className="h-6 w-6 text-[#3b82f6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                    </svg>
+                  </div>
+                  <p className="text-[12px] font-bold text-[#1A1917]">{item.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-[14px] border border-[#E2E4E8] bg-white p-4 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+              <p className="text-[14px] leading-[1.65] text-[#5A5752]">
+                <strong className="font-bold text-[#1A1917]">Contatti:</strong> Per assistenza o per richiedere il reso, contattaci via WhatsApp al <strong className="font-bold text-[#3b82f6]">+39 351 123 4567</strong> o via email a <strong className="font-bold text-[#3b82f6]">supporto@piedeluxe.com</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   DISCLAIMER
+   ════════════════════════════════════════════════════════════════════ */
+
+function Disclaimer() {
+  return (
+    <div className="mx-auto max-w-[1360px] px-4 py-8 text-center text-[12px] leading-[1.65] text-[#9B9790] sm:px-6 lg:px-8">
+      *Questo prodotto non è un dispositivo medico. I benefici percepiti possono variare da persona a persona. Immagini illustrative. Dati basati su sondaggi interni e recensioni verificate.
+    </div>
   );
 }
 
@@ -268,269 +645,14 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
-      <div className="lp">
-        <ProblemSolutionSection />
-        <BenefitsSection />
-        <StatsBar />
-        <TechGridSection />
-        <TimelineSection />
-        <LpReviewsSection />
-        <GuaranteesSection />
-        <OrderStepsSection />
-        <LpFaqSection />
-        <Disclaimer />
-      </div>
-    </div>
-  );
-}
-
-/* ═══════════════════ PROBLEM/SOLUTION SECTION ═══════════════════ */
-
-function ProblemSolutionSection() {
-  return (
-    <section className="lp-sec" style={{ background: "linear-gradient(180deg, #fdf2f8 0%, #fff 100%)" }}>
-      <div className="lp-inner">
-        <h2>Vuoi Essere Più Alta. Ma i Tacchi <em>Ti Distruggono</em>.</h2>
-        <p className="sub">Finalmente esiste un&apos;alternativa: il rialzo nascosto in una ciabatta comodissima.</p>
-
-        <div className="lp-comparison">
-          <div className="lp-comp-bad">
-            <div className="lp-comp-icon">❌</div>
-            <h4>Con i tacchi normali...</h4>
-            <ul>
-              <li>Dolore ai piedi dopo 2 ore</li>
-              <li>Vesciche, bruciore, gonfiore</li>
-              <li>Schiena e ginocchia a pezzi</li>
-              <li>Non puoi camminare a lungo</li>
-              <li>Li togli appena puoi</li>
-            </ul>
-          </div>
-          <div className="lp-comp-good">
-            <div className="lp-comp-icon">✓</div>
-            <h4>Con AureaCloud...</h4>
-            <ul>
-              <li>+6cm reali, dalla mattina alla sera</li>
-              <li>Morbide come camminare sulle nuvole</li>
-              <li>Zero dolore, zero fatica</li>
-              <li>Le usi per ore senza pensarci</li>
-              <li>Nessuno capisce che sei rialzata</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════ BENEFITS SECTION ═══════════════════ */
-
-function BenefitsSection() {
-  return (
-    <section className="lp-fasi">
-      <div className="lp-fasi-head">
-        <h2>3 Benefici in <em>Una Sola Ciabatta</em></h2>
-        <p>Comfort Crocs + Stile Labubu + Rialzo Segreto. Tutto insieme. Finalmente.</p>
-      </div>
-      <div className="lp-fasi-grid">
-        {[
-          { img: "/images/land/aureacloud/benefici/1.jpeg", alt: "Rialzo Segreto 6cm", tag: "Beneficio 1", title: "+6 cm Segreti. Nessuno Li Vede." },
-          { img: "/images/land/aureacloud/benefici/2.jpeg", alt: "Comfort Cloud Estremo", tag: "Beneficio 2", title: "Morbide Come Camminare su Nuvole." },
-          { img: "/images/land/aureacloud/benefici/3.jpeg", alt: "Stile Labubu Trendy", tag: "Beneficio 3", title: "Lo Stile Labubu Che Spopola su TikTok." },
-        ].map((f) => (
-          <div key={f.title} className="lp-fase">
-            <img src={f.img} alt={f.alt} />
-            <span className="lp-fase-tag">{f.tag}</span>
-            <h3>{f.title}</h3>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════ STATS BAR ═══════════════════ */
-
-function StatsBar() {
-  return (
-    <section className="lp-stats-sec">
-      <div className="lp-inner">
-        <div className="lp-stats">
-          <div>
-            <div className="lp-stat-n">6 cm</div>
-            <div className="lp-stat-l">Rialzo invisibile<br />integrato</div>
-          </div>
-          <div>
-            <div className="lp-stat-n">7.500+</div>
-            <div className="lp-stat-l">Vendute solo<br />su TikTok Shop</div>
-          </div>
-          <div>
-            <div className="lp-stat-n">4.9</div>
-            <div className="lp-stat-l">Valutazione media<br />+2.847 recensioni</div>
-          </div>
-        </div>
-        <p className="lp-stats-disc">*Dati da sondaggi interni e recensioni verificate. I risultati individuali possono variare.</p>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════ 6 TECH GRID ═══════════════════ */
-
-const techCards = [
-  { img: "/images/land/aureacloud/card/card1.webp", alt: "Rialzo Invisibile 6cm", chip: "Tacco Segreto · +6 cm", title: "Rialzo Integrato Invisibile", text: <>6 cm nascosti nella suola platform. Dall&apos;esterno sono normali ciabatte trendy. <strong>Il tuo segreto resta invisibile.</strong></> },
-  { img: "/images/land/aureacloud/card/card2.webp", alt: "Materiale Cloud Ultra-Morbido", chip: "Comfort · Cloud", title: "Materiale Cloud Ultra-Morbido", text: <>Stessa tecnologia delle Crocs originali. Morbidezza estrema, leggerezza totale. <strong>Cammini sulle nuvole. Letteralmente.</strong></> },
-  { img: "/images/land/aureacloud/card/card3.webp", alt: "Design Labubu Kawaii", chip: "Stile · Labubu", title: "Design Labubu Kawaii", text: <>Lo stile che ha conquistato TikTok e le fashion week asiatiche. <strong>Trendy, unico, impossibile non farsi notare.</strong></> },
-  { img: "/images/land/aureacloud/card/card4.webp", alt: "Suola Anti-Scivolo", chip: "Sicurezza · Grip", title: "Suola Anti-Scivolo Premium", text: <>Pattern di aderenza studiato per superfici bagnate e asciutte. <strong>Sicura in piscina, sicura in città. Ovunque.</strong></> },
-  { img: "/images/land/aureacloud/card/card5.webp", alt: "Fori di Areazione", chip: "Traspirante · Fresco", title: "Fori di Areazione Strategici", text: <>I fori mantengono il piede fresco e asciutto tutto il giorno. <strong>Zero sudore, zero odore. Anche d&apos;estate.</strong></> },
-  { img: "/images/land/aureacloud/card/card6.webp", alt: "Charm Personalizzabili", chip: "Personalizzazione", title: "Compatibile con Charm e Accessori", text: <>Aggiungi i tuoi charm preferiti e personalizza il tuo stile. <strong>Ogni paio è unico. Come te.</strong></> },
-];
-
-function TechGridSection() {
-  return (
-    <section className="lp-sec">
-      <div className="lp-inner">
-        <h2>6 Caratteristiche che le Rendono <em>Uniche</em></h2>
-        <p className="sub">Non sono solo belle. Sono progettate per darti comfort e altezza senza compromessi.</p>
-        <div className="lp-grid6">
-          {techCards.map((c) => (
-            <div key={c.title} className="lp-card">
-              <img src={c.img} alt={c.alt} />
-              <div className="lp-card-content">
-                <span className="lp-card-chip">{c.chip}</span>
-                <h4>{c.title}</h4>
-                <p>{c.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════ TIMELINE ═══════════════════ */
-
-function TimelineSection() {
-  return (
-    <section className="lp-sec lp-sec-light" style={{ background: "#fdf2f8" }}>
-      <div className="lp-inner">
-        <h2>La Tua Nuova Routine <em>Con AureaCloud</em></h2>
-        <p className="sub"></p>
-        <div className="lp-timeline">
-          {[
-            { week: "Giorno 1", pct: "25%", title: "Le Indossi e Capisci Subito", text: <>Le infili. Sei subito 6cm più alta. Ma la cosa che ti colpisce è il comfort. <strong>Sono così morbide che non credi ai tuoi piedi.</strong></> },
-            { week: "Settimana 1", pct: "50%", title: "Diventano le Tue Preferite", text: <>Le usi al mare, a fare shopping, all&apos;aperitivo. Le amiche chiedono dove le hai trovate. <strong>Tu sorridi e dici &quot;TikTok&quot;.</strong></> },
-            { week: "Settimana 2", pct: "75%", title: "Non Torni Più alle Ciabatte Normali", text: <>Le altre ciabatte sembrano piatte, scomode, banali. Le AureaCloud ti danno quel boost di altezza e stile che non vuoi più perdere. <strong>Le metti ogni giorno.</strong></> },
-            { week: "Settimana 4", pct: "100%", title: "Ordini il Secondo Paio", text: <>Una per la spiaggia. Una per la città. Magari un colore diverso. <strong>Non riesci più a farne a meno.</strong></> },
-          ].map((s) => (
-            <div key={s.week} className="lp-tl-step">
-              <div className="lp-tl-week">{s.week}</div>
-              <div className="lp-tl-bar"><div className="lp-tl-fill" style={{ width: s.pct }} /></div>
-              <div className="lp-tl-info">
-                <strong>{s.title}</strong>
-                <p>{s.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="lp-tl-bottom">
-          <div className="lp-tl-badge">+6cm ogni giorno</div>
-          <div className="lp-tl-badge">Zero fatica</div>
-          <div className="lp-tl-badge">Stile unico</div>
-        </div>
-        <p className="lp-tl-disc">*Esperienza tipica delle nostre clienti. Il comfort è immediato.</p>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════ REVIEWS (client) ═══════════════════ */
-
-function LpReviewsSection() {
-  return (
-    <section className="lp-sec lp-sec-light" id="resenas">
-      <div className="lp-inner">
-        <h2>2.847 Recensioni <em>Verificate</em></h2>
-        <p className="sub">Recensioni verificate esternamente a questo sito web.</p>
-        <LpReviews />
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════ GUARANTEES ═══════════════════ */
-
-function GuaranteesSection() {
-  return (
-    <section className="lp-sec lp-sec-dark">
-      <div className="lp-inner">
-        <h2>Acquista Senza <em>Nessun Rischio</em></h2>
-        <p className="sub">La tua unica preoccupazione: scegliere il colore.</p>
-        <div className="lp-guar-grid">
-          {[
-            { icon: "📦", title: "Spedizione GRATIS", sub: "Consegna GLS 24-48h" },
-            { icon: "💰", title: "Pagamento alla Consegna", sub: "Paghi al corriere in contanti" },
-            { icon: "🔄", title: "Reso 30 Giorni", sub: "Soddisfatto o rimborsato" },
-            { icon: "📞", title: "Assistenza Dedicata", sub: "WhatsApp o telefono" },
-          ].map((g) => (
-            <div key={g.title} className="lp-guar">
-              <div className="lp-guar-ic">{g.icon}</div>
-              <strong>{g.title}</strong>
-              <small>{g.sub}</small>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════ ORDER STEPS ═══════════════════ */
-
-function OrderStepsSection() {
-  return (
-    <section className="lp-sec">
-      <div className="lp-inner">
-        <h2>Ordinare È <em>Semplicissimo</em></h2>
-        <p className="sub">Senza carta di credito, senza registrazione. In 2 minuti è fatto.</p>
-        <div className="lp-pasos">
-          {[
-            { n: "1", title: "Effettua il tuo ordine", text: "Nome, indirizzo e telefono. Nient'altro." },
-            { n: "2", title: "Ti contattiamo per confermare", text: "Ti scriviamo su WhatsApp per confermare i dati. Se non lo usi, ti chiamiamo." },
-            { n: "3", title: "Ricevi con GLS e paghi al corriere", text: "Spedizione GRATIS 24-48h. Paghi in contanti alla consegna." },
-            { n: "4", title: "Non ti convincono? Le restituisci", text: "30 giorni per il reso. Senza complicazioni. Soddisfatto o rimborsato." },
-          ].map((s) => (
-            <div key={s.n} className="lp-paso">
-              <div className="lp-paso-n">{s.n}</div>
-              <div><h4>{s.title}</h4><p>{s.text}</p></div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════ FAQ (client) ═══════════════════ */
-
-function LpFaqSection() {
-  return (
-    <section className="lp-sec lp-sec-light">
-      <div className="lp-inner">
-        <h2>Domande <em>Frequenti</em></h2>
-        <LpFaq />
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════ DISCLAIMER ═══════════════════ */
-
-function Disclaimer() {
-  return (
-    <div className="lp-disc">
-      *Questo prodotto non è un dispositivo medico. I benefici percepiti possono variare da persona a persona. Immagini illustrative. Dati basati su sondaggi interni e recensioni verificate.
+      <ProblemSolutionSection />
+      <FeaturesGridSection />
+      <BeforeAfterSection />
+      <LpReviewsSection />
+      <LpFaqSection />
+      <LogisticsSection />
+      <RefundPolicySection />
+      <Disclaimer />
     </div>
   );
 }

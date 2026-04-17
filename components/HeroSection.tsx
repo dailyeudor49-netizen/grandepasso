@@ -27,16 +27,15 @@ export default function HeroSection() {
             </div>
 
             <h1 className="mt-5 animate-fade-in-up text-3xl font-extrabold leading-[1.1] text-white sm:mt-6 sm:text-5xl lg:text-7xl [animation-delay:100ms]">
-              Il lusso del{" "}
-              <span className="text-blue-400">comfort</span>.{" "}
-              L&apos;eleganza del{" "}
-              <span className="text-blue-400">benessere</span>
+              Calzature scelte per il tuo{" "}
+              <span className="text-blue-400">comfort</span>{" "}
+              quotidiano
             </h1>
 
             <p className="mt-5 animate-fade-in-up text-sm leading-relaxed text-stone-300 sm:mt-6 sm:text-lg lg:text-xl [animation-delay:200ms]">
-              Calzature di alta qualità che uniscono design raffinato e benessere autentico.
-              Tecnologia avanzata, materiali pregiati e attenzione artigianale per i tuoi piedi.
-              Riscopri il piacere di camminare con stile.
+              Con anni di esperienza nel settore, selezioniamo calzature che uniscono{" "}
+              <strong>comfort, postura e benessere</strong>. Ogni modello è pensato per accompagnarti
+              nella tua giornata con il massimo del comfort.
             </p>
 
             <div className="mt-8 flex animate-fade-in-up flex-wrap gap-3 sm:gap-4 [animation-delay:300ms]">

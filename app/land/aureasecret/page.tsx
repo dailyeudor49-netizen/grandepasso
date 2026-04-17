@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/aureasecret/carosello");
@@ -22,6 +23,27 @@ export const metadata: Metadata = {
     "Scopri AureaSecret: la scarpa rialzante con tacco invisibile +7cm e suola ortopedica. Guadagni altezza senza dolore da tacchi. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    icon: "😔",
+    title: "Bassa Statura",
+    description: "Ti senti insicura per la tua altezza e vorresti qualche centimetro in più per sentirti più proporzionata e sicura di te."
+  },
+  {
+    icon: "😣",
+    title: "Tacchi Dolorosi",
+    description: "I tacchi alti ti causano dolore insopportabile ai piedi, schiena e ginocchia. Non riesci a indossarli per più di qualche ora."
+  },
+  {
+    icon: "🙈",
+    title: "Scarpe Rialzanti Evidenti",
+    description: "Le scarpe con rialzo tradizionali si vedono subito e sono imbarazzanti. Tutti capiscono il trucco e ti senti a disagio."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -265,13 +287,14 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
+        <ExpertSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

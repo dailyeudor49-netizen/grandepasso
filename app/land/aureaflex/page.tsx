@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/aureaflex/carosello");
@@ -22,6 +23,27 @@ export const metadata: Metadata = {
     "Scopri AureaFlex: la scarpa ortopedica per infermiere, commesse e chi lavora in piedi tutto il giorno. Knit elasticizzato, suola cloud anti-fatica. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    icon: "😫",
+    title: "Piedi Gonfi e Stanchi",
+    description: "Dopo ore in piedi i tuoi piedi sono gonfi, doloranti e pesanti. Ogni passo è fatica e arrivi a fine turno distrutta."
+  },
+  {
+    icon: "😣",
+    title: "Mal di Schiena Cronico",
+    description: "Stare in piedi tutto il giorno ti causa dolore lombare costante. La tua schiena è rigida e dolorante ogni sera."
+  },
+  {
+    icon: "😩",
+    title: "Scarpe Scomode al Lavoro",
+    description: "Le tue scarpe da lavoro ti fanno male, causano vesciche e non ti danno il supporto che meriti per affrontare turni lunghi."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -266,13 +288,14 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
+        <ExpertSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

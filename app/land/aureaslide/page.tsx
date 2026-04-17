@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/aureaslide/carosello");
@@ -22,6 +23,27 @@ export const metadata: Metadata = {
     "Scopri AureaSlide: sandali ortopedici con tecnologia biomeccanica brevettata. Elimina vene varicose, caviglie gonfie e dolore ai piedi. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    icon: "😫",
+    title: "Piedi Gonfi e Stanchi",
+    description: "I tuoi piedi sono gonfi, pesanti e doloranti dopo una giornata in piedi. Ogni passo è faticoso e arrivi a sera esausta."
+  },
+  {
+    icon: "😣",
+    title: "Circolazione Difficile",
+    description: "Soffri di problemi circolatori, vene varicose o caviglie gonfie. I tuoi piedi hanno bisogno di supporto biomeccanico."
+  },
+  {
+    icon: "😩",
+    title: "Fascite Plantare",
+    description: "Hai dolore al tallone e alla pianta del piede. Camminare è doloroso e i normali sandali peggiorano il problema."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -266,13 +288,14 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
+        <ExpertSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

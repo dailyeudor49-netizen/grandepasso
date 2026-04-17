@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/vitanovaflex/carosello");
@@ -22,6 +23,24 @@ export const metadata: Metadata = {
     "Scopri LuxeFlex: la scarpa ortopedica per infermiere, commesse e chi lavora in piedi tutto il giorno. Knit elasticizzato, suola cloud anti-fatica. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    title: "Turni Interminabili in Piedi",
+    description: "8-12 ore in piedi. I piedi bruciano dopo 2 ore. Le gambe si appesantiscono. La schiena si irrigidisce. Arrivi a casa distrutta. E domani ricomincia tutto."
+  },
+  {
+    title: "Piedi Gonfi e Doloranti a Fine Turno",
+    description: "Le scarpe stringono sempre di più. I piedi si gonfiano. Toglierle è un sollievo e una tortura insieme. La sera non riesci nemmeno a camminare normalmente."
+  },
+  {
+    title: "Schiena e Gambe che Non Reggono Più",
+    description: "La schiena è sempre tesa. Le gambe pesano come piombo. Ogni passo è fatica. Non è normale sentirsi così ogni singolo giorno."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -266,13 +285,14 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
+        <ExpertSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

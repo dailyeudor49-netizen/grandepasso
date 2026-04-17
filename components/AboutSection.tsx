@@ -28,30 +28,29 @@ export default function AboutSection() {
           {/* Text */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 sm:text-sm">
-              Chi Siamo
+              La Nostra Storia
             </p>
-            <h2 className="mt-2 text-2xl font-bold text-stone-900 sm:mt-3 sm:text-4xl">
-              Una nuova filosofia del camminare
+            <h2 className="mt-2 text-2xl font-bold text-stone-900 sm:mt-3 sm:text-4xl lg:text-5xl">
+              Piede Luxe — Esperienza e Passione dal 2014
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-stone-600 sm:mt-6 sm:text-base">
-              Piede Luxe nasce dalla convinzione che i piedi meritino la stessa attenzione
-              che dedichiamo al resto del corpo. Selezioniamo calzature che rispettano
-              la naturale biomeccanica del passo, con materiali traspiranti e plantari
-              ergonomici che si adattano alla forma unica del tuo piede.
+              Con <strong>oltre 10 anni di esperienza</strong> nel settore calzaturiero, Piede Luxe è nata dalla passione per il benessere dei piedi e dalla convinzione che comfort ed eleganza non debbano mai essere un compromesso.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-stone-600 sm:mt-4 sm:text-base">
-              Non vendiamo solo scarpe: offriamo una nuova esperienza di benessere
-              quotidiano. Perche&apos; quando i piedi stanno bene, tutto il corpo ringrazia.
+              Ogni modello che selezioniamo viene testato personalmente dal nostro team. Scegliamo solo calzature che rispettano la biomeccanica naturale del passo, con materiali premium e design ortopedici certificati. <strong>Quando i piedi stanno bene, tutto il corpo ringrazia.</strong>
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-stone-600 sm:mt-4 sm:text-base">
+              Oggi serviamo con orgoglio oltre <strong>15.000 clienti soddisfatti</strong> in tutta Italia, offrendo spedizione gratuita, pagamento alla consegna e un'assistenza dedicata che ti segue prima, durante e dopo l'acquisto.
             </p>
 
             <div className="mt-6 grid grid-cols-3 gap-4 sm:mt-8 sm:gap-6">
               {[
-                { value: "15k+", label: "Clienti" },
-                { value: "50+", label: "Modelli" },
-                { value: "4.9/5", label: "Rating" },
+                { value: "10+", label: "Anni di esperienza" },
+                { value: "15k+", label: "Clienti felici" },
+                { value: "4.9/5", label: "Rating medio" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-xl font-bold text-stone-900 sm:text-2xl">{stat.value}</p>
+                  <p className="text-xl font-bold text-blue-600 sm:text-2xl">{stat.value}</p>
                   <p className="text-[10px] text-stone-500 sm:text-xs">{stat.label}</p>
                 </div>
               ))}

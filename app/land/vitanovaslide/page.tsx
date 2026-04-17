@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/vitanovaslide/carosello");
@@ -22,6 +23,24 @@ export const metadata: Metadata = {
     "Scopri LuxeSlide: sandali ortopedici con tecnologia biomeccanica brevettata. Elimina vene varicose, caviglie gonfie e dolore ai piedi. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    title: "Vene Varicose che Bruciano d'Estate",
+    description: "Le gambe bruciano, le vene sono gonfie e visibili. Ogni passo è pesante. I sandali normali peggiorano tutto perché non attivano la circolazione. L'estate diventa una tortura."
+  },
+  {
+    title: "Caviglie Gonfie che Esplodono nei Sandali",
+    description: "La mattina entrano, la sera stringono. Le caviglie si gonfiano, i sandali comprimono, le fasce tagliano la pelle. Torni a casa con i segni rossi e il gonfiore che pulsa."
+  },
+  {
+    title: "Fascite e Tallonite che Non Vanno Mai in Vacanza",
+    description: "D'estate il dolore al tallone peggiora. I sandali piatti massacrano la pianta del piede. Ogni passo è una fitta. Rinunci a uscire perché camminare fa troppo male."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -266,13 +285,14 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
+        <ExpertSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

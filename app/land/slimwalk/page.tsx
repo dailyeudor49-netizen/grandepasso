@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/slimwalk/carosello");
@@ -22,6 +23,27 @@ export const metadata: Metadata = {
     "SlimWalk: la scarpa con tecnologia RockerTone™ che tonifica glutei e cosce ad ogni passo. Cellulite ridotta in 4 settimane. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    icon: "😩",
+    title: "Gambe Poco Toniche",
+    description: "Le tue gambe sono molli e poco toniche. Vorresti gambe più snelle e definite ma non hai tempo per la palestra."
+  },
+  {
+    icon: "😣",
+    title: "Cellulite Evidente",
+    description: "La cellulite su cosce e glutei ti mette a disagio. Hai provato creme e trattamenti ma niente funziona davvero."
+  },
+  {
+    icon: "😫",
+    title: "Sedentarietà Forzata",
+    description: "Passi troppo tempo seduta per lavoro. Le tue gambe sono pesanti, la circolazione è lenta e i muscoli si indeboliscono."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -446,14 +468,14 @@ export default function SlimWalkLanding() {
       <div className="lp-bar">🔥 OFFERTA LIMITATA: <em>50% DI SCONTO</em> + Spedizione Gratuita — Solo per oggi!</div>
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
-        <ProblemSection />
+        <TechGridSection />
+        <LpReviewsSection />
+        <ExpertSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TransformationSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

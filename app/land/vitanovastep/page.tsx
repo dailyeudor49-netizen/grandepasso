@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/vitanovastep/carosello");
@@ -22,6 +23,24 @@ export const metadata: Metadata = {
     "Scopri LuxeStep Pro: scarpe ortopediche con tecnologia biomeccanica brevettata. Elimina il dolore ai piedi, ginocchia e schiena. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    title: "Fascite Plantare e Tallonite",
+    description: "Ogni mattina il primo passo è una fitta. Il tallone brucia, l'arco plantare tira. Cammini zoppicando fino a quando il piede si 'scalda'. Ma il dolore torna sempre."
+  },
+  {
+    title: "Mal di Schiena e Ginocchia Logorate",
+    description: "Ogni passo è un colpo che risale dal tallone alle ginocchia, fino alla schiena. Stare in piedi diventa faticoso. Il dolore lombare cronico è ormai parte della routine."
+  },
+  {
+    title: "Gambe Pesanti e Affaticate",
+    description: "Dopo poche ore in piedi le gambe sono già stanche. Camminare diventa uno sforzo. La sera ti siedi e non vuoi più alzarti."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -266,13 +285,14 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
+        <ExpertSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

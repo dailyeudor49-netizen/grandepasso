@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./landing.css";
 import fs from "fs";
-import path from "path";
+import path from="path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
+import PainPointsSection from "@/components/landing/PainPointsSection";
 
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public/images/land/vitanovarise/carosello");
@@ -22,6 +23,24 @@ export const metadata: Metadata = {
     "Scopri LuxeRise: la scarpa rialzante uomo con +7cm invisibili e suola ortopedica. Guadagni altezza senza che nessuno lo sappia. Spedizione gratuita e pagamento alla consegna.",
 };
 
+/* ════════════════════════════════════════════════════════════════════
+   PAIN POINTS DATA
+   ════════════════════════════════════════════════════════════════════ */
+
+const painPoints = [
+  {
+    title: "L'Altezza Che Ti Manca Ti Pesa Ogni Giorno",
+    description: "Nelle foto di gruppo stai dietro. Agli appuntamenti ti senti piccolo. Al lavoro devi alzare la voce per farti notare. L'altezza non dovrebbe decidere come ti trattano."
+  },
+  {
+    title: "I Tacchi Rialzanti Si Vedono e Fanno Male",
+    description: "Plateau enormi, suole esagerate, tacco visibile. Tutti capiscono. E dopo un'ora i piedi bruciano, la schiena protesta, le ginocchia cedono."
+  },
+  {
+    title: "Compensare con la Postura Ti Distrugge la Schiena",
+    description: "Anni passati a stare più dritto, a gonfiare il petto, a forzare la postura. Il risultato: tensioni cervicali, dolori lombari, ginocchia logorate. Il corpo paga il prezzo."
+  }
+];
 
 /* ════════════════════════════════════════════════════════════════════
    HERO SECTION
@@ -265,13 +284,14 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
+      <PainPointsSection painPoints={painPoints} />
       <div className="lp">
+        <TechGridSection />
+        <LpReviewsSection />
+        <ExpertSection />
         <BenefitsSection />
         <StatsBar />
-        <TechGridSection />
         <TimelineSection />
-        <LpReviewsSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />

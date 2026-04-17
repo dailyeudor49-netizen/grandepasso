@@ -196,72 +196,205 @@ export function HeroGallery({ images }: { images: string[] }) {
 /* ───────────────────────── LP Reviews ───────────────────────── */
 
 const lpReviewData = [
-  { batch: 1, av: "M", name: "Martina L.", meta: "✓ Verificata · Milano", stars: "★★★★★", text: "Non credevo fossero così comode! Le ho prese per il mare ma le uso anche per andare a fare la spesa, all'aperitivo, ovunque. E nessuno ha capito che il rialzo è nascosto nella suola. Sono 6cm più alta e sto benissimo!" },
-  { batch: 1, av: "G", name: "Giulia F.", meta: "✓ Verificata · Roma", stars: "★★★★★", text: "Sono bassa (1.55) e odiavo le ciabatte piatte. Queste sono una rivoluzione. Morbidissime tipo Crocs ma con il rialzo che mi fa sentire finalmente alta. Le amiche sono impazzite, ne ho già regalate 3 paia." },
-  { batch: 1, av: "F", name: "Francesca D.", meta: "✓ Verificata · Napoli", stars: "★★★★★", text: "Le ho viste su TikTok e dovevo provarle. Sono arrivate in 2 giorni, la qualità è ottima, e i 6cm di rialzo sono davvero invisibili. Sembro più alta ma nessuno capisce il trucco. Consigliatissime!" },
+  {
+    batch: 1,
+    initial: "F",
+    color: "#9333ea",
+    name: "Francesca M.",
+    date: "2 giorni fa",
+    stars: 5,
+    text: "Non credevo fossero così comode! Le ho prese per il mare ma le uso anche per andare a fare la spesa, all'aperitivo, ovunque. E nessuno ha capito che il rialzo è nascosto nella suola. Sono 6cm più alta e sto benissimo!",
+    response: "Ciao Francesca! Grazie mille per la tua recensione! Siamo felici che le AureaCloud ti accompagnino in ogni momento della giornata. Il comfort e il rialzo invisibile sono proprio il nostro punto di forza!"
+  },
+  {
+    batch: 1,
+    initial: "A",
+    color: "#ec4899",
+    name: "Anna G.",
+    date: "5 giorni fa",
+    stars: 5,
+    text: "Sono bassa (1.55) e odiavo le ciabatte piatte. Queste sono una rivoluzione. Morbidissime tipo Crocs ma con il rialzo che mi fa sentire finalmente alta. Le amiche sono impazzite, ne ho già regalate 3 paia."
+  },
+  {
+    batch: 1,
+    initial: "G",
+    color: "#3b82f6",
+    name: "Giulia T.",
+    date: "1 settimana fa",
+    stars: 5,
+    text: "Le ho viste su TikTok e dovevo provarle. Sono arrivate in 2 giorni, la qualità è ottima, e i 6cm di rialzo sono davvero invisibili. Sembro più alta ma nessuno capisce il trucco. Consigliatissime!",
+    response: "Grazie Giulia! Siamo contentissimi che tu sia soddisfatta! La discrezione è la chiave del nostro design. Buona continuazione con le tue AureaCloud!"
+  },
+  {
+    batch: 2,
+    initial: "D",
+    color: "#f59e0b",
+    name: "Daniela P.",
+    date: "2 settimane fa",
+    stars: 5,
+    text: "Comodissime! Le porto tutto il giorno senza problemi. Il materiale è morbidissimo e il rialzo non si vede proprio. Perfette per chi vuole essere comoda e allo stesso tempo sentirsi più alta."
+  },
+  {
+    batch: 2,
+    initial: "P",
+    color: "#10b981",
+    name: "Paola R.",
+    date: "2 settimane fa",
+    stars: 5,
+    text: "Avevo dei dubbi ma sono rimasta molto soddisfatta. La qualità è ottima e sono super leggere. Le consiglio a tutte!"
+  },
+  {
+    batch: 2,
+    initial: "S",
+    color: "#ef4444",
+    name: "Sara B.",
+    date: "3 settimane fa",
+    stars: 5,
+    text: "Finalmente una ciabatta che mi fa sentire alta senza sacrificare il comfort! Le uso sia in casa che fuori. Ottime!"
+  },
 ];
 
 export function LpReviews() {
-  const [visibleBatch, setVisibleBatch] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [showDropdown, setShowDropdown] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const reviewsPerPage = 3;
+  const totalPages = Math.ceil(lpReviewData.length / reviewsPerPage);
+  const startIdx = (currentPage - 1) * reviewsPerPage;
+  const visibleReviews = lpReviewData.slice(startIdx, startIdx + reviewsPerPage);
 
   return (
     <>
-      <div className="lp-revs">
-        {lpReviewData.filter((r) => r.batch <= visibleBatch).map((r, i) => (
-          <div key={i} className="lp-rev">
-            <div className="lp-rev-h">
-              <div className="lp-rev-av">{r.av}</div>
-              <div>
-                <div className="lp-rev-name">{r.name}</div>
-                <div className="lp-rev-meta">{r.meta}</div>
-                <div className="lp-rev-stars">{r.stars}</div>
+      {/* Reviews Grid */}
+      <div className="mb-6 space-y-4">
+        {visibleReviews.map((r, i) => (
+          <div key={i} className="rounded-[14px] border border-[#E2E4E8] bg-white p-5 shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+            {/* Header */}
+            <div className="mb-3 flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <div
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[16px] font-bold text-white"
+                  style={{ backgroundColor: r.color }}
+                >
+                  {r.initial}
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[14px] font-bold text-[#1A1917]">{r.name}</span>
+                    <span className="text-[13px] text-[#9B9790]">{r.date}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-0.5">
+                      {[...Array(r.stars)].map((_, idx) => (
+                        <svg key={idx} className="h-3.5 w-3.5 fill-[#D97706]" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center gap-1 rounded-[5px] bg-[#E6F4EC] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#2B6E44]">
+                      <svg viewBox="0 0 24 24" className="h-3 w-3" fill="currentColor">
+                        <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                      Acquisto verificato
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
-            <p>{r.text}</p>
+
+            {/* Review Text */}
+            <p className="mb-3 text-[14px] leading-[1.65] text-[#5A5752]">{r.text}</p>
+
+            {/* Response from Shop */}
+            {r.response && (
+              <div className="mt-3 rounded-[8px] border-l-4 border-[#FF6B35] bg-[#FFF5F0] p-4">
+                <p className="mb-2 text-[13px] font-bold text-[#1A1917]">Risposta di Calzame</p>
+                <p className="text-[13px] leading-[1.65] text-[#5A5752]">{r.response}</p>
+              </div>
+            )}
           </div>
         ))}
       </div>
 
-      {visibleBatch < 3 && (
-        <button className="lp-revs-more" onClick={() => setVisibleBatch((b) => b + 1)}>
-          Mostra altre recensioni ▾
-        </button>
-      )}
-
-      <div className="lp-rev-form-wrap">
-        {!formSubmitted ? (
-          <>
-            <h3>Lascia la tua recensione</h3>
-            <form onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }}>
-              <div className="lp-rev-field">
-                <label htmlFor="lp-rv-name">Nome *</label>
-                <input type="text" id="lp-rv-name" placeholder="Il tuo nome" required />
-              </div>
-              <div className="lp-rev-field">
-                <label>Punteggio *</label>
-                <div className="lp-star-select">
-                  <input type="radio" id="lp-s5" name="lp-rating" value="5" required /><label htmlFor="lp-s5">★</label>
-                  <input type="radio" id="lp-s4" name="lp-rating" value="4" /><label htmlFor="lp-s4">★</label>
-                  <input type="radio" id="lp-s3" name="lp-rating" value="3" /><label htmlFor="lp-s3">★</label>
-                  <input type="radio" id="lp-s2" name="lp-rating" value="2" /><label htmlFor="lp-s2">★</label>
-                  <input type="radio" id="lp-s1" name="lp-rating" value="1" /><label htmlFor="lp-s1">★</label>
-                </div>
-              </div>
-              <div className="lp-rev-field">
-                <label htmlFor="lp-rv-text">La tua recensione *</label>
-                <textarea id="lp-rv-text" placeholder="Raccontaci la tua esperienza con le AureaCloud..." required />
-              </div>
-              <button type="submit" className="lp-rev-submit">Invia recensione</button>
-            </form>
-          </>
-        ) : (
-          <div className="lp-rev-success" style={{ display: "block" }}>
-            <div className="lp-rev-success-ic">✅</div>
-            <p><b>Grazie per la tua recensione!</b><br />La tua recensione è in fase di revisione. Verrà pubblicata una volta verificata la sua autenticità.</p>
-          </div>
+      {/* Pagination */}
+      <div className="mb-6 flex items-center justify-center gap-2">
+        {[...Array(totalPages)].map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentPage(i + 1)}
+            className={`flex h-10 w-10 items-center justify-center rounded-[8px] text-[14px] font-bold transition-colors ${
+              currentPage === i + 1
+                ? "bg-[#3b82f6] text-white"
+                : "border border-[#E2E4E8] bg-white text-[#5A5752] hover:border-[#3b82f6]"
+            }`}
+          >
+            {i + 1}
+          </button>
+        ))}
+        {currentPage < totalPages && (
+          <button
+            onClick={() => setCurrentPage(currentPage + 1)}
+            className="flex h-10 w-10 items-center justify-center rounded-[8px] border border-[#E2E4E8] bg-white text-[14px] font-bold text-[#5A5752] hover:border-[#3b82f6]"
+          >
+            ›
+          </button>
         )}
       </div>
+
+      {/* Show More Dropdown Button */}
+      <div className="mb-6 text-center">
+        <button
+          onClick={() => setShowDropdown(!showDropdown)}
+          className="inline-flex items-center gap-2 rounded-[8px] border border-[#E2E4E8] bg-white px-4 py-2 text-[14px] font-bold text-[#5A5752] transition-colors hover:border-[#3b82f6]"
+        >
+          Mostra altre recensioni
+          <svg viewBox="0 0 24 24" className={`h-4 w-4 transition-transform ${showDropdown ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Write Review Button */}
+      <div className="text-center">
+        <button
+          onClick={() => setFormSubmitted(false)}
+          className="inline-flex items-center gap-2 rounded-[14px] border-2 border-[#3b82f6] bg-white px-6 py-3 text-[14px] font-bold text-[#3b82f6] transition-colors hover:bg-[#3b82f6] hover:text-white shadow-[0_1px_3px_rgba(26,25,23,0.04)]"
+        >
+          <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+          </svg>
+          Scrivi una recensione
+        </button>
+      </div>
+
+      {/* Review Form Modal */}
+      {!formSubmitted && (
+        <div className="lp-rev-form-wrap mt-6 hidden">
+          <h3>Lascia la tua recensione</h3>
+          <form onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }}>
+            <div className="lp-rev-field">
+              <label htmlFor="lp-rv-name">Nome *</label>
+              <input type="text" id="lp-rv-name" placeholder="Il tuo nome" required />
+            </div>
+            <div className="lp-rev-field">
+              <label>Punteggio *</label>
+              <div className="lp-star-select">
+                <input type="radio" id="lp-s5" name="lp-rating" value="5" required /><label htmlFor="lp-s5">★</label>
+                <input type="radio" id="lp-s4" name="lp-rating" value="4" /><label htmlFor="lp-s4">★</label>
+                <input type="radio" id="lp-s3" name="lp-rating" value="3" /><label htmlFor="lp-s3">★</label>
+                <input type="radio" id="lp-s2" name="lp-rating" value="2" /><label htmlFor="lp-s2">★</label>
+                <input type="radio" id="lp-s1" name="lp-rating" value="1" /><label htmlFor="lp-s1">★</label>
+              </div>
+            </div>
+            <div className="lp-rev-field">
+              <label htmlFor="lp-rv-text">La tua recensione *</label>
+              <textarea id="lp-rv-text" placeholder="Raccontaci la tua esperienza con le AureaCloud..." required />
+            </div>
+            <button type="submit" className="lp-rev-submit">Invia recensione</button>
+          </form>
+        </div>
+      )}
     </>
   );
 }
@@ -279,14 +412,27 @@ const lpFaqData = [
 
 export function LpFaq() {
   return (
-    <>
+    <div className="space-y-3">
       {lpFaqData.map((item, i) => (
-        <details key={i} className="lp-faq">
-          <summary>{item.q}</summary>
-          <div className="lp-faq-b">{item.a}</div>
+        <details key={i} className="group rounded-[14px] border border-[#E2E4E8] bg-white shadow-[0_1px_3px_rgba(26,25,23,0.04)]">
+          <summary className="flex cursor-pointer items-center justify-between p-4 text-[16px] font-bold text-[#1A1917] list-none">
+            <span>{item.q}</span>
+            <svg
+              viewBox="0 0 24 24"
+              className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div className="px-4 pb-4 pt-0 text-[14px] leading-[1.65] text-[#5A5752]">
+            {item.a}
+          </div>
         </details>
       ))}
-    </>
+    </div>
   );
 }
 

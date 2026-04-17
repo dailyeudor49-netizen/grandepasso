@@ -265,15 +265,15 @@ gtag('config','${GADS_ID}');`,
       />
       <StickyOrderButton />
       <HeroSection />
-      <ExpertSection />
       <div className="lp">
         <ProblemSection />
-        <BenefitsSection />
-        <StatsBar />
         <TechGridSection />
-        <ComparisonSection />
-        <TimelineSection />
         <LpReviewsSection />
+        <ExpertSection />
+        <BenefitsSection />
+        <ComparisonSection />
+        <StatsBar />
+        <TimelineSection />
         <GuaranteesSection />
         <OrderStepsSection />
         <LpFaqSection />
