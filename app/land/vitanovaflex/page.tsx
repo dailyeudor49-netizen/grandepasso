@@ -29,14 +29,17 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
+    icon: "⏰",
     title: "Turni Interminabili in Piedi",
     description: "8-12 ore in piedi. I piedi bruciano dopo 2 ore. Le gambe si appesantiscono. La schiena si irrigidisce. Arrivi a casa distrutta. E domani ricomincia tutto."
   },
   {
+    icon: "🦶",
     title: "Piedi Gonfi e Doloranti a Fine Turno",
     description: "Le scarpe stringono sempre di più. I piedi si gonfiano. Toglierle è un sollievo e una tortura insieme. La sera non riesci nemmeno a camminare normalmente."
   },
   {
+    icon: "💢",
     title: "Schiena e Gambe che Non Reggono Più",
     description: "La schiena è sempre tesa. Le gambe pesano come piombo. Ogni passo è fatica. Non è normale sentirsi così ogni singolo giorno."
   }

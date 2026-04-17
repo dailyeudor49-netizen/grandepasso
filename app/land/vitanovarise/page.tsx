@@ -29,14 +29,17 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
+    icon: "⏰",
     title: "L'Altezza Che Ti Manca Ti Pesa Ogni Giorno",
     description: "Nelle foto di gruppo stai dietro. Agli appuntamenti ti senti piccolo. Al lavoro devi alzare la voce per farti notare. L'altezza non dovrebbe decidere come ti trattano."
   },
   {
+    icon: "🦶",
     title: "I Tacchi Rialzanti Si Vedono e Fanno Male",
     description: "Plateau enormi, suole esagerate, tacco visibile. Tutti capiscono. E dopo un'ora i piedi bruciano, la schiena protesta, le ginocchia cedono."
   },
   {
+    icon: "💢",
     title: "Compensare con la Postura Ti Distrugge la Schiena",
     description: "Anni passati a stare più dritto, a gonfiare il petto, a forzare la postura. Il risultato: tensioni cervicali, dolori lombari, ginocchia logorate. Il corpo paga il prezzo."
   }

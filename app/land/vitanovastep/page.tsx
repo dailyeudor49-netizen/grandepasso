@@ -29,14 +29,17 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
+    icon: "⏰",
     title: "Fascite Plantare e Tallonite",
     description: "Ogni mattina il primo passo è una fitta. Il tallone brucia, l'arco plantare tira. Cammini zoppicando fino a quando il piede si 'scalda'. Ma il dolore torna sempre."
   },
   {
+    icon: "🦶",
     title: "Mal di Schiena e Ginocchia Logorate",
     description: "Ogni passo è un colpo che risale dal tallone alle ginocchia, fino alla schiena. Stare in piedi diventa faticoso. Il dolore lombare cronico è ormai parte della routine."
   },
   {
+    icon: "💢",
     title: "Gambe Pesanti e Affaticate",
     description: "Dopo poche ore in piedi le gambe sono già stanche. Camminare diventa uno sforzo. La sera ti siedi e non vuoi più alzarti."
   }

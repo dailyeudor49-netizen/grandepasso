@@ -29,14 +29,17 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
+    icon: "⏰",
     title: "I Tacchi Fanno Male. Sempre.",
     description: "Dopo 2 ore i piedi bruciano. Il tallone protesta. Le ginocchia cedono. La schiena si irrigidisce. Arrivi a casa e togli le scarpe come se togliessi una tortura. E domani ricomincia."
   },
   {
+    icon: "🦶",
     title: "Essere Bassa Ti Pesa Più di Quanto Ammetti",
     description: "Nelle foto di gruppo sparisci. Agli eventi devi stare in punta di piedi. Ai colloqui devi alzare la voce per farti notare. L'altezza non dovrebbe decidere come ti trattano."
   },
   {
+    icon: "💢",
     title: "Le Scarpe Rialzanti Si Vedono",
     description: "Plateau enormi, suole esagerate, tacco visibile. Tutti capiscono. Il segreto non è più tale. E comunque dopo un'ora fanno male come i tacchi normali."
   }

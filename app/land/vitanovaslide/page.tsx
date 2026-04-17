@@ -29,14 +29,17 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
+    icon: "⏰",
     title: "Vene Varicose che Bruciano d'Estate",
     description: "Le gambe bruciano, le vene sono gonfie e visibili. Ogni passo è pesante. I sandali normali peggiorano tutto perché non attivano la circolazione. L'estate diventa una tortura."
   },
   {
+    icon: "🦶",
     title: "Caviglie Gonfie che Esplodono nei Sandali",
     description: "La mattina entrano, la sera stringono. Le caviglie si gonfiano, i sandali comprimono, le fasce tagliano la pelle. Torni a casa con i segni rossi e il gonfiore che pulsa."
   },
   {
+    icon: "💢",
     title: "Fascite e Tallonite che Non Vanno Mai in Vacanza",
     description: "D'estate il dolore al tallone peggiora. I sandali piatti massacrano la pianta del piede. Ogni passo è una fitta. Rinunci a uscire perché camminare fa troppo male."
   }
