@@ -83,8 +83,15 @@ function fmtPrice(n: number) {
 
 /* ═══════════════════ Main Component ═══════════════════ */
 
+const COLORS = [
+  { name: "Bianca", value: "white", hex: "#FFFFFF" },
+  { name: "Rosa", value: "pink", hex: "#FFC0CB" },
+  { name: "Lilla", value: "lilac", hex: "#C8A2C8" },
+];
+
 export function OrderSection({ image }: { image: string }) {
   const [size, setSize] = useState("40");
+  const [color, setColor] = useState("white");
   const currentImage = image;
   const [modalOpen, setModalOpen] = useState(false);
   const [step, setStep] = useState<1 | 2 | "blocked" | "phone-blocked">(1);
@@ -282,6 +289,32 @@ export function OrderSection({ image }: { image: string }) {
 
   return (
     <>
+      {/* ─── Color Selector ─── */}
+      <div className="mb-4">
+        <p className="text-sm font-semibold text-gray-500 mb-2.5">Seleziona Colore</p>
+        <div className="flex gap-3">
+          {COLORS.map((c) => (
+            <button
+              key={c.value}
+              onClick={() => setColor(c.value)}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 text-sm font-medium transition-all ${
+                color === c.value
+                  ? "border-emerald-600 bg-emerald-50"
+                  : "border-gray-300 bg-white hover:border-gray-400"
+              }`}
+            >
+              <div
+                className="w-6 h-6 rounded-full border-2 border-gray-300"
+                style={{ backgroundColor: c.hex }}
+              />
+              <span className={color === c.value ? "text-emerald-700 font-semibold" : "text-gray-700"}>
+                {c.name}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* ─── Size Selector ─── */}
       <div className="mb-4" id="taglie">
         <p className="text-sm font-semibold text-gray-500 mb-2.5">Seleziona Taglia</p>
@@ -374,7 +407,9 @@ export function OrderSection({ image }: { image: string }) {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[15px] font-semibold text-gray-900 mb-0.5 leading-tight">{PRODUCT_TITLE}</p>
-                    <p className="text-[13px] text-gray-400 mb-1">Taglia {size}</p>
+                    <p className="text-[13px] text-gray-400 mb-1">
+                      Colore: {COLORS.find(c => c.value === color)?.name} · Taglia {size}
+                    </p>
                     <div className="flex items-center gap-2">
                       <span className="text-[17px] font-bold text-[#137333]">{fmtPrice(PRODUCT_PRICE)}</span>
                       <span className="text-sm text-gray-400 line-through">{fmtPrice(PRODUCT_COMPARE)}</span>
@@ -434,7 +469,9 @@ export function OrderSection({ image }: { image: string }) {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-[13px] font-semibold text-gray-900 leading-tight">{PRODUCT_TITLE}</p>
-                      <p className="text-[11px] text-gray-400">Taglia {size}</p>
+                      <p className="text-[11px] text-gray-400">
+                        Colore: {COLORS.find(c => c.value === color)?.name} · Taglia {size}
+                      </p>
                     </div>
                     <span className="text-[15px] font-bold text-[#137333] shrink-0">{fmtPrice(PRODUCT_PRICE)}</span>
                   </div>
