@@ -11,6 +11,8 @@ const FULLSHIP_API_URL =
 const ALLOWED_ORIGINS = [
   "https://piedeluxe.com",
   "https://www.piedeluxe.com",
+  "https://piedeluxeit.com",
+  "https://www.piedeluxeit.com",
   "https://piedeluxe.vercel.app",
   "http://localhost:3000",
   "http://localhost:3001",
