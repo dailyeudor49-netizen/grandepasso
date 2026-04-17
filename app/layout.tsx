@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Piede Luxe - Comfort e Benessere per i Tuoi Piedi",
@@ -28,6 +29,22 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
+      {/* Google Ads Global Tag */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17528659507"
+        strategy="afterInteractive"
+      />
+      <Script
+        id="gtag-init-global"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','AW-17528659507');`,
+        }}
+      />
       <body className="antialiased">
         <div className="piedeluxe-top-banner bg-blue-700 py-2.5 px-4 text-center">
           <p className="text-xs font-bold tracking-wide text-white">
