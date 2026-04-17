@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./landing.css";
 import fs from "fs";
-import path from="path";
+import path from "path";
 import { HeroGallery, StickyOrderButton, LpReviews, LpFaq } from "./client";
 import { OrderSection } from "./OrderModal";
 import PainPointsSection from "@/components/landing/PainPointsSection";
