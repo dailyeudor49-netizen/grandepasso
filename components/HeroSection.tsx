@@ -20,28 +20,28 @@ export default function HeroSection() {
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="max-w-2xl">
             <div className="animate-fade-in-up inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 backdrop-blur-sm">
-              <span className="h-2 w-2 shrink-0 rounded-full bg-blue-400" />
-              <span className="text-[11px] font-medium tracking-wide text-blue-200 sm:text-xs">
-                Comfort Premium
+              <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
+              <span className="text-[11px] font-medium tracking-wide text-emerald-200 sm:text-xs">
+                Made in Italy
               </span>
             </div>
 
             <h1 className="mt-5 animate-fade-in-up text-3xl font-extrabold leading-[1.1] text-white sm:mt-6 sm:text-5xl lg:text-7xl [animation-delay:100ms]">
-              Calzature scelte per il tuo{" "}
-              <span className="text-blue-400">comfort</span>{" "}
+              Calzature italiane per il tuo{" "}
+              <span className="text-emerald-400">benessere</span>{" "}
               quotidiano
             </h1>
 
             <p className="mt-5 animate-fade-in-up text-sm leading-relaxed text-stone-300 sm:mt-6 sm:text-lg lg:text-xl [animation-delay:200ms]">
-              Con anni di esperienza nel settore, selezioniamo calzature che uniscono{" "}
-              <strong>comfort, postura e benessere</strong>. Ogni modello è pensato per accompagnarti
-              nella tua giornata con il massimo del comfort.
+              Tradizione artigianale italiana e innovazione al servizio dei tuoi piedi.{" "}
+              <strong>Comfort, postura e stile</strong> in ogni passo.
+              Qualità Made in Italy per il tuo benessere.
             </p>
 
             <div className="mt-8 flex animate-fade-in-up flex-wrap gap-3 sm:gap-4 [animation-delay:300ms]">
               <Link
                 href="/catalogo"
-                className="inline-flex items-center rounded-full bg-blue-600 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-2xl shadow-blue-600/30 transition-all hover:bg-blue-500 sm:px-8 sm:py-4"
+                className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-2xl shadow-emerald-600/30 transition-all hover:bg-emerald-500 sm:px-8 sm:py-4"
               >
                 Scopri le Soluzioni
                 <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

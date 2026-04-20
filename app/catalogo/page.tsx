@@ -6,9 +6,9 @@ import { getProductsSorted } from "@/lib/products";
 import categories from "@/lib/categories.json";
 
 export const metadata: Metadata = {
-  title: "Catalogo - Piede Luxe Calzature",
+  title: "Catalogo - Grande Passo Calzature",
   description:
-    "Sfoglia il nostro catalogo completo di calzature comfort. Soluzioni per postura, benessere e stile quotidiano.",
+    "Sfoglia il nostro catalogo completo di calzature italiane comfort. Soluzioni per postura, benessere e stile quotidiano.",
 };
 
 export default function CatalogoPage() {
@@ -18,7 +18,7 @@ export default function CatalogoPage() {
         {/* Header */}
         <ScrollReveal>
           <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+            <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600">
               Le Nostre Soluzioni
             </p>
             <h1 className="mt-3 text-3xl font-bold text-stone-900 sm:text-4xl">
@@ -38,7 +38,7 @@ export default function CatalogoPage() {
               <Link
                 key={cat.slug}
                 href={`/catalogo/${cat.slug}`}
-                className="rounded-full border border-stone-200 bg-white px-4 py-2 text-xs font-semibold text-stone-700 shadow-sm transition-all hover:border-blue-500 hover:bg-blue-50 hover:text-blue-700 sm:px-5 sm:py-2.5 sm:text-sm"
+                className="rounded-full border border-stone-200 bg-white px-4 py-2 text-xs font-semibold text-stone-700 shadow-sm transition-all hover:border-emerald-500 hover:bg-emerald-50 hover:text-emerald-700 sm:px-5 sm:py-2.5 sm:text-sm"
               >
                 {cat.label}
               </Link>

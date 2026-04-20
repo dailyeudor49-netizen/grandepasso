@@ -67,7 +67,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               key={link.href}
               href={link.href}
               onClick={onClose}
-              className="rounded-lg px-4 py-3 text-base font-medium text-stone-700 transition-colors hover:bg-blue-50 hover:text-blue-700"
+              className="rounded-lg px-4 py-3 text-base font-medium text-stone-700 transition-colors hover:bg-emerald-50 hover:text-emerald-700"
             >
               {link.label}
             </Link>

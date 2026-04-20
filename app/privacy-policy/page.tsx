@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Piede Luxe Calzature",
-  description: "Informativa sulla privacy di Piede Luxe Calzature.",
+  title: "Privacy Policy - Grande Passo Calzature",
+  description: "Informativa sulla privacy di Grande Passo Calzature.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -20,12 +20,12 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-xl font-semibold text-stone-900">1. Titolare del trattamento</h2>
             <p className="mt-3">
-              Il titolare del trattamento dei dati personali e&apos; Piede Luxe Calzature S.r.l.,
-              con sede legale in Via Manzoni 21, 20121 Milano (MI), P.IVA
-              05793577488, iscritta al Registro delle Imprese di Milano con
-              numero REA MI-1847362. Per qualsiasi informazione relativa al
+              Il titolare del trattamento dei dati personali e&apos; Grande Passo Calzature S.r.l.,
+              con sede legale in Via Garibaldi 45, 50123 Firenze (FI), P.IVA
+              05793572339, iscritta al Registro delle Imprese di Firenze con
+              numero REA FI-1847362. Per qualsiasi informazione relativa al
               trattamento dei tuoi dati personali puoi scrivere a
-              info@piedeluxe.com o tramite la pagina Contatti.
+              info@grandepasso.it o tramite la pagina Contatti.
             </p>
           </section>
 

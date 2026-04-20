@@ -12,6 +12,7 @@ export interface Product {
   soldOut: boolean;
   hasLanding?: boolean;
   image?: string;
+  isFeatured?: boolean;
 }
 
 export type Category =
