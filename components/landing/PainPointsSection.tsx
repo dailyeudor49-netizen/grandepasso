@@ -10,7 +10,7 @@ interface PainPointsSectionProps {
 
 export default function PainPointsSection({ painPoints }: PainPointsSectionProps) {
   return (
-    <section className="bg-emerald-50/50 py-16 sm:py-20">
+    <section className="bg-blue-50/50 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 text-center">

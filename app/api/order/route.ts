@@ -9,11 +9,11 @@ const FULLSHIP_API_URL =
 
 // Allowed origins for the order API
 const ALLOWED_ORIGINS = [
-  "https://grandepasso.it",
-  "https://www.grandepasso.it",
-  "https://grandepassoit.com",
-  "https://www.grandepassoit.com",
-  "https://grandepasso.vercel.app",
+  "https://piedeluxe.com",
+  "https://www.piedeluxe.com",
+  "https://piedeluxeit.com",
+  "https://www.piedeluxeit.com",
+  "https://piedeluxe.vercel.app",
   "http://localhost:3000",
   "http://localhost:3001",
 ];

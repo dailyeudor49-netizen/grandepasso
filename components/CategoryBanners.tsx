@@ -91,7 +91,7 @@ export default function CategoryBanners() {
     <section id="collezioni" className="py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600 sm:text-sm">
+          <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 sm:text-sm">
             Le Nostre Soluzioni
           </p>
           <h2 className="mt-2 text-2xl font-bold text-stone-900 sm:mt-3 sm:text-4xl lg:text-5xl">

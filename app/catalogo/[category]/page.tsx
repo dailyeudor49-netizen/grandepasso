@@ -19,7 +19,7 @@ export async function generateMetadata({
   const cat = categories.find((c) => c.slug === category);
   if (!cat) return { title: "Categoria non trovata" };
   return {
-    title: `${cat.label} - Grande Passo Calzature`,
+    title: `${cat.label} - Piede Luxe Calzature`,
     description: cat.description,
   };
 }
@@ -40,9 +40,9 @@ export default async function CategoryPage({
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="mb-8 text-[11px] text-stone-400 sm:text-xs">
-          <Link href="/" className="hover:text-emerald-600">Home</Link>
+          <Link href="/" className="hover:text-blue-600">Home</Link>
           <span className="mx-1.5">/</span>
-          <Link href="/catalogo" className="hover:text-emerald-600">Catalogo</Link>
+          <Link href="/catalogo" className="hover:text-blue-600">Catalogo</Link>
           <span className="mx-1.5">/</span>
           <span className="text-stone-600">{cat.label}</span>
         </nav>
@@ -50,7 +50,7 @@ export default async function CategoryPage({
         {/* Header */}
         <ScrollReveal>
           <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600">
+            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
               {cat.label}
             </p>
             <h1 className="mt-3 text-3xl font-bold text-stone-900 sm:text-4xl">

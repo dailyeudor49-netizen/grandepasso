@@ -47,7 +47,7 @@ export default function FeaturesBar() {
               key={feature.title}
               className="flex flex-col items-center gap-1.5 text-center sm:flex-row sm:gap-2 sm:text-left"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 sm:h-12 sm:w-12">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 sm:h-12 sm:w-12">
                 {feature.icon}
               </div>
               <div className="min-w-0">

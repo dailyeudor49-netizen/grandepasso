@@ -3,28 +3,6 @@ import { Product } from "./types";
 export const products: Product[] = [
   // ── Prodotti con Landing Page ──
   {
-    slug: "deluxe-arch",
-    name: "Deluxe Arch",
-    subtitle: "Sandalo Ortopedico Elastico Donna",
-    price: 49.90,
-    originalPrice: 99.90,
-    category: "ortopediche",
-    description:
-      "Sandali ortopedici italiani con tomaia a maglia elastica effetto seconda pelle, supporto alla caviglia, soletta memory foam e suola curva che scarica ginocchia e schiena.",
-    features: [
-      "Tomaia a maglia elastica",
-      "Soletta memory foam",
-      "Suola curva ergonomica",
-      "Supporto caviglia rinforzato",
-    ],
-    color: "#FF914D",
-    accentColor: "#FFB07D",
-    soldOut: false,
-    hasLanding: true,
-    image: "/images/land/deluxe-arch/carosello/1.webp",
-    isFeatured: true,
-  },
-  {
     slug: "aureacloud",
     name: "AureaCloud",
     subtitle: "Ciabatte Platform con Rialzo Segreto +6cm",
@@ -440,7 +418,5 @@ export function getProductsSorted(): Product[] {
 }
 
 export function getFeaturedProducts(limit = 4): Product[] {
-  const featured = products.filter((p) => p.isFeatured && !p.soldOut);
-  if (featured.length > 0) return featured.slice(0, limit);
   return getProductsSorted().slice(0, limit);
 }

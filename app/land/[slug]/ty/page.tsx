@@ -17,7 +17,7 @@ export async function generateMetadata({
   const product = getProductBySlug(slug);
   if (!product) return { title: "Grazie" };
   return {
-    title: `Grazie per il tuo ordine - ${product.name} - Grande Passo Calzature`,
+    title: `Grazie per il tuo ordine - ${product.name} - Piede Luxe Calzature`,
   };
 }
 

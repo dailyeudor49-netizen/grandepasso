@@ -11,14 +11,14 @@ export default function AboutSection() {
             <div className="aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
                 src="/images/home/benessere.webp"
-                alt="Grande Passo Calzature - Comfort e Benessere"
+                alt="Piede Luxe Calzature - Comfort e Benessere"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div className="absolute -bottom-4 -right-2 rounded-xl bg-white p-4 shadow-xl ring-1 ring-stone-200/60 sm:-right-6 sm:p-5">
-              <p className="text-2xl font-bold text-emerald-600 sm:text-3xl">10+</p>
+              <p className="text-2xl font-bold text-blue-600 sm:text-3xl">10+</p>
               <p className="text-[10px] font-medium text-stone-500 sm:text-xs">
                 Anni di esperienza
               </p>
@@ -27,14 +27,14 @@ export default function AboutSection() {
 
           {/* Text */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600 sm:text-sm">
+            <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 sm:text-sm">
               La Nostra Storia
             </p>
             <h2 className="mt-2 text-2xl font-bold text-stone-900 sm:mt-3 sm:text-4xl lg:text-5xl">
-              Grande Passo — Tradizione Italiana dal 2014
+              Piede Luxe — Esperienza e Passione dal 2014
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-stone-600 sm:mt-6 sm:text-base">
-              Con <strong>oltre 10 anni di esperienza</strong> nel settore calzaturiero italiano, Grande Passo è nata dalla passione per il benessere dei piedi e dalla convinzione che comfort ed eleganza non debbano mai essere un compromesso.
+              Con <strong>oltre 10 anni di esperienza</strong> nel settore calzaturiero, Piede Luxe è nata dalla passione per il benessere dei piedi e dalla convinzione che comfort ed eleganza non debbano mai essere un compromesso.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-stone-600 sm:mt-4 sm:text-base">
               Ogni modello che selezioniamo viene testato personalmente dal nostro team. Scegliamo solo calzature che rispettano la biomeccanica naturale del passo, con materiali premium e design ortopedici certificati. <strong>Quando i piedi stanno bene, tutto il corpo ringrazia.</strong>
@@ -50,7 +50,7 @@ export default function AboutSection() {
                 { value: "4.9/5", label: "Rating medio" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-xl font-bold text-emerald-600 sm:text-2xl">{stat.value}</p>
+                  <p className="text-xl font-bold text-blue-600 sm:text-2xl">{stat.value}</p>
                   <p className="text-[10px] text-stone-500 sm:text-xs">{stat.label}</p>
                 </div>
               ))}

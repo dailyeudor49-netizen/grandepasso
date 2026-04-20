@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header with Aggregated Rating */}
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600 sm:text-sm">
+          <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 sm:text-sm">
             Recensioni Verificate
           </p>
           <h2 className="mt-2 text-2xl font-bold text-stone-900 sm:mt-3 sm:text-4xl lg:text-5xl">
@@ -121,7 +121,7 @@ export default function TestimonialsSection() {
               {/* Footer: User + Badge */}
               <div className="border-t border-stone-100 pt-4">
                 <div className="mb-2 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 font-serif text-sm font-bold text-emerald-700">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 font-serif text-sm font-bold text-blue-700">
                     {t.name.charAt(0)}
                   </div>
                   <div className="flex-1">

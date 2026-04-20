@@ -21,8 +21,8 @@ export default function RefundGuarantee({ accentColor }: RefundGuaranteeProps) {
           <h3 className="mb-1 text-[15px] font-bold text-[#1A1917]">Garanzia soddisfatto o rimborsato — 30 giorni</h3>
           <p className="text-[13px] leading-[1.65] text-[#5A5752]">
             Non sei soddisfatto? Scrivi a{" "}
-            <a href="mailto:supporto@grandepasso.it" className="underline" style={{ color: accentColor }}>
-              supporto@grandepasso.it
+            <a href="mailto:supporto@piedeluxe.com" className="underline" style={{ color: accentColor }}>
+              supporto@piedeluxe.com
             </a>{" "}
             entro 30 giorni. Ritiriamo noi il pacco e il rimborso è immediato. <strong>Zero rischi.</strong>
           </p>

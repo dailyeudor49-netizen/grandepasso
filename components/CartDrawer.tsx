@@ -99,7 +99,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
           <Link
             href="/catalogo"
             onClick={onClose}
-            className="mt-6 inline-flex items-center rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-600/25 transition-all hover:bg-emerald-700"
+            className="mt-6 inline-flex items-center rounded-full bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all hover:bg-blue-700"
           >
             Scopri il Catalogo
           </Link>

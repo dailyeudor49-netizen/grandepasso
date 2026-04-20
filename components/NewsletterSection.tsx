@@ -22,8 +22,8 @@ export default function NewsletterSection() {
           </p>
 
           {submitted ? (
-            <div className="mt-5 rounded-xl bg-emerald-50 p-3 sm:mt-6 sm:p-4">
-              <p className="text-xs font-medium text-emerald-800 sm:text-sm">
+            <div className="mt-5 rounded-xl bg-blue-50 p-3 sm:mt-6 sm:p-4">
+              <p className="text-xs font-medium text-blue-800 sm:text-sm">
                 Grazie per l&apos;iscrizione! Ti terremo aggiornato.
               </p>
             </div>
@@ -36,11 +36,11 @@ export default function NewsletterSection() {
                 type="email"
                 required
                 placeholder="La tua email"
-                className="w-full rounded-full border border-stone-300 bg-white px-4 py-2.5 text-sm text-stone-900 placeholder:text-stone-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 focus:outline-none sm:w-80 sm:px-5 sm:py-3"
+                className="w-full rounded-full border border-stone-300 bg-white px-4 py-2.5 text-sm text-stone-900 placeholder:text-stone-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none sm:w-80 sm:px-5 sm:py-3"
               />
               <button
                 type="submit"
-                className="rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-600/25 transition-all hover:bg-emerald-700 sm:px-8 sm:py-3"
+                className="rounded-full bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all hover:bg-blue-700 sm:px-8 sm:py-3"
               >
                 Iscriviti
               </button>

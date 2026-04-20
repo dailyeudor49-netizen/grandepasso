@@ -24,7 +24,7 @@ export async function generateMetadata({
   const product = getProductBySlug(slug);
   if (!product) return { title: "Prodotto non trovato" };
   return {
-    title: `${product.name} - Grande Passo Calzature`,
+    title: `${product.name} - Piede Luxe Calzature`,
     description: product.description,
   };
 }
@@ -48,9 +48,9 @@ export default async function LandingPage({
       {/* Breadcrumb */}
       <div className="border-b border-stone-200">
         <nav className="mx-auto max-w-7xl px-4 py-2.5 text-[11px] text-stone-400 sm:px-6 sm:text-xs lg:px-8">
-          <Link href="/" className="hover:text-emerald-600">Home</Link>
+          <Link href="/" className="hover:text-blue-600">Home</Link>
           <span className="mx-1.5">/</span>
-          <Link href={`/catalogo/${product.category}`} className="hover:text-emerald-600">{categoryLabels[product.category]}</Link>
+          <Link href={`/catalogo/${product.category}`} className="hover:text-blue-600">{categoryLabels[product.category]}</Link>
           <span className="mx-1.5">/</span>
           <span className="text-stone-600">{product.name}</span>
         </nav>
@@ -105,7 +105,7 @@ export default async function LandingPage({
                 )}
               </div>
               {discount > 0 && (
-                <p className="mt-1.5 text-xs font-semibold text-emerald-700 sm:text-sm">
+                <p className="mt-1.5 text-xs font-semibold text-blue-700 sm:text-sm">
                   Risparmi &euro;{(product.originalPrice - product.price).toFixed(2)} con questa offerta
                 </p>
               )}

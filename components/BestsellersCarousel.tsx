@@ -47,7 +47,7 @@ export default function BestsellersCarousel({ products }: BestsellersCarouselPro
             {currentIndex > 0 && (
               <button
                 onClick={prev}
-                className="absolute left-0 top-1/2 z-10 -translate-x-4 -translate-y-1/2 rounded-full bg-white p-3 shadow-xl transition-all hover:scale-110 hover:bg-emerald-600 hover:text-white"
+                className="absolute left-0 top-1/2 z-10 -translate-x-4 -translate-y-1/2 rounded-full bg-white p-3 shadow-xl transition-all hover:scale-110 hover:bg-blue-600 hover:text-white"
                 aria-label="Precedente"
               >
                 <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +59,7 @@ export default function BestsellersCarousel({ products }: BestsellersCarouselPro
             {currentIndex < maxIndex && (
               <button
                 onClick={next}
-                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-4 rounded-full bg-white p-3 shadow-xl transition-all hover:scale-110 hover:bg-emerald-600 hover:text-white"
+                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-4 rounded-full bg-white p-3 shadow-xl transition-all hover:scale-110 hover:bg-blue-600 hover:text-white"
                 aria-label="Successivo"
               >
                 <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,7 +102,7 @@ export default function BestsellersCarousel({ products }: BestsellersCarouselPro
 
                       {/* Content */}
                       <div className="p-5">
-                        <h3 className="mb-2 text-lg font-bold text-stone-900 group-hover:text-emerald-600">
+                        <h3 className="mb-2 text-lg font-bold text-stone-900 group-hover:text-blue-600">
                           {product.name}
                         </h3>
                         <p className="mb-3 line-clamp-2 text-sm text-stone-600">
@@ -111,7 +111,7 @@ export default function BestsellersCarousel({ products }: BestsellersCarouselPro
 
                         {/* Price */}
                         <div className="mb-4 flex items-baseline gap-2">
-                          <span className="text-2xl font-extrabold text-emerald-600">
+                          <span className="text-2xl font-extrabold text-blue-600">
                             €{product.price.toFixed(2)}
                           </span>
                           {product.originalPrice && (
@@ -122,7 +122,7 @@ export default function BestsellersCarousel({ products }: BestsellersCarouselPro
                         </div>
 
                         {/* CTA */}
-                        <div className="flex items-center justify-between rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-bold text-white transition-all group-hover:bg-emerald-700">
+                        <div className="flex items-center justify-between rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-bold text-white transition-all group-hover:bg-blue-700">
                           <span>Scopri di più</span>
                           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -142,7 +142,7 @@ export default function BestsellersCarousel({ products }: BestsellersCarouselPro
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   className={`h-2.5 rounded-full transition-all ${
-                    idx === currentIndex ? "w-8 bg-emerald-600" : "w-2.5 bg-stone-300 hover:bg-stone-400"
+                    idx === currentIndex ? "w-8 bg-blue-600" : "w-2.5 bg-stone-300 hover:bg-stone-400"
                   }`}
                   aria-label={`Vai alla pagina ${idx + 1}`}
                 />
@@ -180,7 +180,7 @@ export default function BestsellersCarousel({ products }: BestsellersCarouselPro
 
                   {/* Content */}
                   <div className="p-5">
-                    <h3 className="mb-2 text-lg font-bold text-stone-900 group-hover:text-emerald-600">
+                    <h3 className="mb-2 text-lg font-bold text-stone-900 group-hover:text-blue-600">
                       {product.name}
                     </h3>
                     <p className="mb-3 line-clamp-2 text-sm text-stone-600">
@@ -189,7 +189,7 @@ export default function BestsellersCarousel({ products }: BestsellersCarouselPro
 
                     {/* Price */}
                     <div className="mb-4 flex items-baseline gap-2">
-                      <span className="text-2xl font-extrabold text-emerald-600">
+                      <span className="text-2xl font-extrabold text-blue-600">
                         €{product.price.toFixed(2)}
                       </span>
                       {product.originalPrice && (
@@ -200,7 +200,7 @@ export default function BestsellersCarousel({ products }: BestsellersCarouselPro
                     </div>
 
                     {/* CTA */}
-                    <div className="flex items-center justify-between rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-bold text-white transition-all group-hover:bg-emerald-700">
+                    <div className="flex items-center justify-between rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-bold text-white transition-all group-hover:bg-blue-700">
                       <span>Scopri di più</span>
                       <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

@@ -46,7 +46,7 @@ export default function Home() {
       <section className="bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <ScrollReveal>
-            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400 sm:text-sm">
+            <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 sm:text-sm">
               Investi nel tuo benessere
             </p>
             <h2 className="mt-3 text-2xl font-bold text-white sm:mt-4 sm:text-4xl lg:text-5xl">
@@ -59,7 +59,7 @@ export default function Home() {
             <div className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:justify-center sm:gap-4">
               <Link
                 href="/catalogo"
-                className="inline-flex w-full items-center justify-center rounded-full bg-emerald-600 px-8 py-3.5 text-xs font-bold uppercase tracking-wide text-white shadow-2xl shadow-emerald-600/20 transition-all hover:bg-emerald-500 sm:w-auto sm:px-10 sm:py-4 sm:text-sm"
+                className="inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-8 py-3.5 text-xs font-bold uppercase tracking-wide text-white shadow-2xl shadow-blue-600/20 transition-all hover:bg-blue-500 sm:w-auto sm:px-10 sm:py-4 sm:text-sm"
               >
                 Scopri le Soluzioni
               </Link>
