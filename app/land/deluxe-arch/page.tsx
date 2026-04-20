@@ -30,9 +30,9 @@ function getCarouselImages(): string[] {
 }
 
 export const metadata: Metadata = {
-  title: "Deluxe Arch — Sandalo Ortopedico Elastico Donna | Piede Luxe",
+  title: "Deluxe Arch — Sandalo Ortopedico Elastico Donna | Grande Passo",
   description:
-    "Scopri le Deluxe Arch: sandali ortopedici con tomaia a maglia elastica effetto seconda pelle, supporto alla caviglia, soletta memory foam e suola curva che scarica ginocchia e schiena.",
+    "Scopri le Deluxe Arch: sandali ortopedici italiani con tomaia a maglia elastica effetto seconda pelle, supporto alla caviglia, soletta memory foam e suola curva che scarica ginocchia e schiena.",
 };
 
 /* ════════════════════════════════════════════════════════════

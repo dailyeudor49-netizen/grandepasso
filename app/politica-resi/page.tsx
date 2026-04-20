@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Politica Resi - Piede Luxe Calzature",
-  description: "Informazioni sulla politica resi e rimborsi di Piede Luxe Calzature.",
+  title: "Politica Resi - Grande Passo Calzature",
+  description: "Informazioni sulla politica resi e rimborsi di Grande Passo Calzature.",
 };
 
 export default function PoliticaResiPage() {
@@ -20,8 +20,8 @@ export default function PoliticaResiPage() {
           <section>
             <h2 className="text-xl font-semibold text-stone-900">Garanzia soddisfatti o rimborsati</h2>
             <p className="mt-3">
-              Piede Luxe Calzature S.r.l. (P.IVA 05793577488, sede in Via Manzoni 21,
-              20121 Milano) offre una garanzia di rimborso entro 30 giorni
+              Grande Passo Calzature S.r.l. (P.IVA 05793572339, sede in Via Garibaldi 45,
+              50123 Firenze) offre una garanzia di rimborso entro 30 giorni
               dalla consegna su tutti i prodotti acquistati sul nostro sito.
             </p>
           </section>
@@ -49,7 +49,7 @@ export default function PoliticaResiPage() {
             <h2 className="text-xl font-semibold text-stone-900">Come effettuare un reso</h2>
             <p className="mt-3">
               Per effettuare un reso, contatta il nostro servizio clienti
-              scrivendo a info@piedeluxe.com o tramite WhatsApp.
+              scrivendo a info@grandepasso.it o tramite WhatsApp.
               Ti invieremo le istruzioni e l&apos;etichetta per la
               spedizione gratuita del reso.
             </p>

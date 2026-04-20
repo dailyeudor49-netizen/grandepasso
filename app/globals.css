@@ -9,9 +9,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-cream: #f8fafc;
-  --color-blue-700: #1d4ed8;
-  --color-blue-600: #2563eb;
-  --color-blue-500: #3b82f6;
+  --color-emerald-700: #047857;
+  --color-emerald-600: #059669;
+  --color-emerald-500: #10b981;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-serif: "Poppins", system-ui, sans-serif;
 }
@@ -117,13 +117,13 @@ summary {
 }
 
 ::selection {
-  background-color: #bfdbfe;
+  background-color: #a7f3d0;
   color: #1c1917;
 }
 
-/* Hide Piede Luxe header/footer on standalone landing pages */
-body:has(.orthostep-standalone) .piedeluxe-top-banner,
-body:has(.orthostep-standalone) .piedeluxe-header,
-body:has(.orthostep-standalone) .piedeluxe-footer {
+/* Hide Grande Passo header/footer on standalone landing pages */
+body:has(.orthostep-standalone) .grandepasso-top-banner,
+body:has(.orthostep-standalone) .grandepasso-header,
+body:has(.orthostep-standalone) .grandepasso-footer {
   display: none !important;
 }

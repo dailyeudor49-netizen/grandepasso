@@ -5,9 +5,9 @@ import "./globals.css";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Piede Luxe - Comfort e Benessere per i Tuoi Piedi",
+  title: "Grande Passo - Comfort e Benessere per i Tuoi Piedi",
   description:
-    "Calzature premium che uniscono stile e comfort. Design elegante, materiali di qualità e tecnologia avanzata per il benessere dei tuoi piedi.",
+    "Calzature italiane che uniscono stile e comfort. Design elegante, materiali di qualità e tecnologia avanzata per il benessere dei tuoi piedi.",
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it">
+    <html lang="it" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -46,16 +46,16 @@ gtag('config','AW-17528659507');`,
         }}
       />
       <body className="antialiased">
-        <div className="piedeluxe-top-banner bg-blue-700 py-2.5 px-4 text-center">
+        <div className="grandepasso-top-banner bg-emerald-700 py-2.5 px-4 text-center">
           <p className="text-xs font-bold tracking-wide text-white">
             SPEDIZIONE GRATUITA IN 24/48H &middot; RESO FACILE 30 GIORNI &middot; PAGA ALLA CONSEGNA
           </p>
         </div>
-        <div className="piedeluxe-header">
+        <div className="grandepasso-header">
           <Header />
         </div>
         <main className="min-h-screen">{children}</main>
-        <div className="piedeluxe-footer">
+        <div className="grandepasso-footer">
           <Footer />
         </div>
       </body>

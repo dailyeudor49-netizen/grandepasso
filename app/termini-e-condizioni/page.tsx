@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Termini e Condizioni - Piede Luxe Calzature",
-  description: "Termini e condizioni d'uso del sito Piede Luxe Calzature.",
+  title: "Termini e Condizioni - Grande Passo Calzature",
+  description: "Termini e condizioni d'uso del sito Grande Passo Calzature.",
 };
 
 export default function TerminiPage() {
@@ -20,8 +20,8 @@ export default function TerminiPage() {
           <section>
             <h2 className="text-xl font-semibold text-stone-900">1. Premessa</h2>
             <p className="mt-3">
-              Piede Luxe Calzature S.r.l. (P.IVA 05793577488), con sede legale in
-              Via Manzoni 21, 20121 Milano (MI), e&apos; un negozio online
+              Grande Passo Calzature S.r.l. (P.IVA 05793572339), con sede legale in
+              Via Garibaldi 45, 50123 Firenze (FI), e&apos; un negozio online
               specializzato nella vendita di calzature comfort e benessere.
             </p>
           </section>
@@ -30,7 +30,7 @@ export default function TerminiPage() {
             <h2 className="text-xl font-semibold text-stone-900">2. Natura del servizio</h2>
             <p className="mt-3">
               I prodotti presentati su questo sito sono venduti direttamente
-              da Piede Luxe Calzature S.r.l. I prezzi indicati sono comprensivi di IVA.
+              da Grande Passo Calzature S.r.l. I prezzi indicati sono comprensivi di IVA.
               La disponibilita&apos; dei prodotti e&apos; soggetta a variazione.
             </p>
           </section>
@@ -48,7 +48,7 @@ export default function TerminiPage() {
             <h2 className="text-xl font-semibold text-stone-900">4. Proprieta&apos; intellettuale</h2>
             <p className="mt-3">
               Tutti i contenuti del sito (testi, grafica, layout) sono di
-              proprieta&apos; di Piede Luxe Calzature S.r.l. e sono protetti dalle leggi
+              proprieta&apos; di Grande Passo Calzature S.r.l. e sono protetti dalle leggi
               sul diritto d&apos;autore. E&apos; vietata la riproduzione senza
               autorizzazione.
             </p>
@@ -58,7 +58,7 @@ export default function TerminiPage() {
             <h2 className="text-xl font-semibold text-stone-900">5. Legge applicabile</h2>
             <p className="mt-3">
               I presenti termini sono regolati dalla legge italiana. Per
-              qualsiasi controversia sara&apos; competente il Foro di Milano.
+              qualsiasi controversia sara&apos; competente il Foro di Firenze.
             </p>
           </section>
         </div>
