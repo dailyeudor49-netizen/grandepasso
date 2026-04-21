@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import Script from "next/script";
 
 const FB_PIXEL_ID = "1576025786901423";
-const GADS_ID = "AW-17528659507";
-const GADS_CONVERSION = "AW-17528659507/kWnjCITH8Z0cELO8qKZB";
+const GADS_ID = "AW-17101926572";
+const GADS_CONVERSION = "AW-17101926572/RYRNCPiXnqAcEKzh6to_";
 
 export default function TrackingPixels() {
   const fired = useRef(false);

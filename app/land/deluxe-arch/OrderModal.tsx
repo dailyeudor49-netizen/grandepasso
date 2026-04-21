@@ -231,7 +231,7 @@ export function OrderSection({ image }: { image: string }) {
         upsell: upsell ? { name: "Plantare Ortopedico", price: UPSELL_PRICE.toFixed(2) } : null,
         totalPrice: totalPrice.toFixed(2),
         timestamp: Date.now(),
-        gadsConv: "AW-17528659507/kWnjCITH8Z0cELO8qKZB",
+        gadsConv: "AW-17101926572/RYRNCPiXnqAcEKzh6to_",
         _payload: payload,
       }));
       localStorage.setItem("userData", JSON.stringify({
